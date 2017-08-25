@@ -1,0 +1,50 @@
+@include bp-x-small {
+
+  .site-footer {
+
+    &__logo {
+
+      & svg {
+        height: 4rem;
+        width: auto;
+        fill: $secondary_color;
+        margin: 1.6rem 0;
+      }
+    }
+
+    &__list-item {
+      display: inline-block;
+
+      &:not(:first-of-type) {
+        margin-left: 4rem;
+      }
+    }
+
+    &__link {
+      display: block;
+      color: $secondary_color;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.0042rem;
+      text-transform: uppercase;
+
+      &:hover, &:hover > * {
+        color: $secondary_color_hover;
+      }
+    }
+  }
+}
+
+@include bp-medium {
+
+  .site-footer {
+
+    &__logo {
+
+      & svg {
+        height: 5rem;
+        margin: 2rem 0;
+      }
+    }
+  }
+}

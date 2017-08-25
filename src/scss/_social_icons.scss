@@ -1,0 +1,13 @@
+.social {
+  &__list {
+    &-item {
+      display: inline-block;
+      &:not(:first-of-type) {
+        margin-left: 1rem;
+      }
+    }
+  }
+  &__link {
+    color: $secondary-color;
+  }
+}

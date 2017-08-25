@@ -1,0 +1,95 @@
+//  Sites Settings
+//  -----------------------------
+//
+//  Table of Contents:
+//
+//   1. Typography
+//   2. Colors
+//   3. Breakpoints
+//   4. Apply settings
+
+// 1. Typography
+// ---------
+@import 'https://fonts.googleapis.com/css?family=Kalam:300|Merriweather:300,300i,700|Open+Sans:100,200,300,400,600,700';
+
+$html_font_size: 62.5%;
+$body_font_size: 1.6rem;
+$serif_font: 'Merriweather', serif;
+$sans_font: 'Open Sans', sans-serif;
+$cursive_font: 'Kalam', cursive;
+$header_lineheight: 1.4;
+$paragraph_lineheight: 1.6;
+
+$font_smoothing: antialiased;
+$font-rendering: optimizeLegibility;
+
+// 2. Colors
+// ---------
+$primary_color: #FC5050;
+$secondary_color: #2C3644;
+$black: #000;
+$grey: #EDEDED;
+$white: #FEFEFE;
+
+$primary_color_hover: lighten( $primary_color, 20% );
+$secondary_color_hover: lighten( $secondary_color, 20% );
+
+$white_hover: darken( $white, 20% );
+
+// 3. Breakpoints
+// ---------
+$extra_small_width: 320px;
+$small_width: 480px;
+$medium_width: 768px;
+$large_width: 992px;
+$extra_large_width: 1200px;
+
+@mixin bp-x-small {
+  @media (min-width: #{$extra_small_width}) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media (min-width: #{$small_width}) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media (min-width: #{$medium_width}) {
+    @content;
+  }
+}
+
+@mixin bp-large {
+  @media (min-width: #{$large_width}) {
+    @content;
+  }
+}
+
+@mixin bp-x-large {
+  @media (min-width: #{$extra_large_width}) {
+    @content;
+  }
+}
+
+
+// 4. Apply settings
+// ---------
+html {
+  font-size: $html_font_size;
+  -webkit-font-smoothing: $font_smoothing;
+  -webkit-font-rendering: $font_rendering;
+}
+
+body {
+  font-family: $sans_font;
+  font-size: $body_font_size;
+  background-color: $white;
+  margin: 0;
+}
+
+p {
+  font-family: $serif_font;
+}

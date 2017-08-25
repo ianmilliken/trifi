@@ -1,0 +1,74 @@
+@include bp-x-small {
+
+  .j-post {
+    &__banner {
+      & img {
+        width: 100%;
+        height: auto;
+        min-height: 30rem;
+        object-fit: cover;
+      }
+    }
+    &__heading, &__body {
+      max-width: 54rem;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 4rem;
+    }
+    &__heading {
+      & h1 {
+        font-size: 5.2rem;
+        font-weight: 800;
+        color: $secondary_color;
+        letter-spacing: -0.104rem;
+        line-height: 1.4;
+      }
+    }
+    &__body {
+      & h3 {
+        font-size: 2.1rem;
+        font-weight: 600;
+        color: $secondary_color;
+        letter-spacing: -0.032rem;
+      }
+      & p {
+        font-size: 1.6rem;
+        color: $secondary_color;
+        line-height: 1.64;
+        margin-top: 2.2rem;
+      }
+      & h3 + p {
+        margin-top: 1.6rem;
+      }
+      & p + h3 {
+        margin-top: 4rem;
+      }
+      & img {
+        width: calc(100% + 4rem);
+        margin: 0 -4rem;
+        object-fit: cover;
+        max-height: 40rem;
+      }
+    }
+  }
+}
+
+@include bp-medium {
+
+    .j-post {
+
+      &__heading, &__body {
+        max-width: 76.8rem;
+        margin-top: 6rem;
+      }
+
+      &__body {
+        & p {
+          font-size: 1.8rem;
+          line-height: 1.82;
+          margin-top: 3rem;
+        }
+      }
+    }
+}

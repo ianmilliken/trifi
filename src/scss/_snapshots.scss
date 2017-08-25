@@ -1,0 +1,74 @@
+@include bp-x-small {
+
+  .content-narrow {
+    max-width: 76.8rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content {
+    padding-top: 7.2rem;
+
+    &__intro {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+      font-size: 1.9rem;
+      opacity: 0.7;
+    }
+
+    &__body {
+
+      & > * {
+        margin-top: 3rem;
+      }
+
+      & > p {
+        max-width: 76.8rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        & .fa {
+          padding-right: 0.8rem;
+        }
+
+        & + .embed-narrow, & + .embed-narrow--short {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .embed-narrow, .embed-narrow--short {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
+
+@include bp-medium {
+
+  .content {
+    padding-top: 11rem;
+  }
+
+  .embed-narrow, .embed-narrow--short {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .embed-narrow--short {
+    max-width: 45%;
+  }
+}
+
+@include bp-large {
+
+  .embed-narrow {
+    max-width: 80%;
+  }
+
+  .embed-narrow--short {
+    max-width: 45%;
+  }
+}

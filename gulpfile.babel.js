@@ -12,6 +12,8 @@ import svgmin from "gulp-svgmin";
 import inject from "gulp-inject";
 import replace from "gulp-replace";
 import cssnano from "cssnano";
+import sass from "gulp-sass";
+import autoprefixer from "gulp-autoprefixer";
 
 const browserSync = BrowserSync.create();
 const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
@@ -49,6 +51,20 @@ gulp.task("css", () => (
     .pipe(browserSync.stream())
 ));
 
+// SCSS
+gulp.task("sass", () => (
+  gulp.src("./src/scss/*.scss")
+  .pipe(sass({
+    outputStyle : "compressed",
+    includePaths: ["node_modules/susy/sass"]
+  }))
+  .pipe(autoprefixer({
+    browsers : ["last 20 versions"]
+  }))
+  .pipe(gulp.dest("./dist/css"))
+  .pipe(browserSync.stream())
+));
+
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
 
@@ -79,14 +95,14 @@ gulp.task("svg", () => {
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
-gulp.task("server", ["hugo", "css", "js", "svg", "cms"], () => {
+gulp.task("server", ["hugo", "sass", "js", "svg", "cms"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
-  gulp.watch("./src/css/**/*.css", ["css"]);
+  gulp.watch("./src/scss/**/*.scss", ["sass"]);
   gulp.watch("./src/cms/*", ["cms"]);
   gulp.watch("./site/static/img/icons/*.svg", ["svg"]);
   gulp.watch("./site/**/*", ["hugo"]);

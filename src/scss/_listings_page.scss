@@ -1,0 +1,246 @@
+// Local Variables
+$thumbnail_width: 30rem;
+$thumbnail_offset: 32rem;
+$thumbnail_small_width: 20rem;
+$thumbnail_small_offset: 22rem;
+
+@include bp-x-small {
+
+  .listings-header {
+    max-width: 54rem;
+    width: 100%;
+    margin: 4rem auto 0;
+    text-align: center;
+
+    &__title {
+      font-weight: 300;
+      position: relative;
+      padding-bottom: 2.6rem;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 5rem;
+        height: 0.2rem;
+        margin: auto;
+        background-color: $primary_color;
+      }
+    }
+
+    &__intro {
+      font-size: 1.6rem;
+    }
+  }
+
+  .listings-body {
+    max-width: 54rem;
+    width: 100%;
+    margin: 4rem auto 0;
+  }
+
+  .article-item {
+    border-bottom: 1px solid $grey;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+
+    &--small {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $grey;
+      }
+    }
+
+    &__link {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    &__thumbnail, &__thumbnail--small {
+      width: 100%;
+      height: 28rem;
+      object-fit: cover;
+      box-shadow: 0 0.2rem 3rem 0 rgba(0,0,0,0.15);
+      transition: all 0.2s ease;
+    }
+
+    &__body {
+      width: 100%;
+      position: relative;
+    }
+
+    &__title {
+      font-size: 2.3rem;
+      font-weight: 600;
+      color: $primary_color;
+      letter-spacing: -0.056rem;
+      margin-top: 2rem;
+      line-height: 1.26;
+    }
+
+    &__summary {
+      font-family: $serif_font;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: $secondary_color;
+      margin-top: 1rem;
+    }
+
+    &__meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $secondary_color;
+      margin-top: 1.6rem;
+    }
+
+    &__location {
+      margin-top: 0.4rem;
+    }
+
+    &__author {
+
+      order: 2;
+
+      &__image {
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 3.6rem;
+        border: 0.1rem solid $white;
+        box-shadow: 0 0.2rem 1rem 0 rgba(0,0,0,0.22);
+        float: left;
+        margin-right: 1rem;
+      }
+
+      &__name {
+        display: inline-block;
+        line-height: 3.4rem;
+      }
+    }
+  }
+
+  .listings-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $secondary_color;
+
+    &__pages {
+      display: inline-block;
+      margin-right: 2rem;
+    }
+
+    &__controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__button {
+      display: block;
+      border: 0.1rem solid $grey;
+      border-radius: 3.4rem;
+      width: 10rem;
+      height: 3.4rem;
+      line-height: 3.4rem;
+      text-align: center;
+      color: $secondary_color;
+
+      &:not(:first-of-type) {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        border-color: $secondary_color_hover;
+        color: $secondary_color_hover;
+      }
+    }
+  }
+
+}
+
+@include bp-medium {
+
+  .listings-header {
+    max-width: 76.8rem;
+
+    &__intro {
+      font-size: 1.9rem;
+    }
+  }
+
+  .listings-body {
+    max-width: 76.8rem;
+  }
+
+  .article-item {
+
+    &__title {
+      margin-top: 1rem;
+    }
+
+    &__link:hover {
+      .article-item__thumbnail, .article-item__thumbnail--small {
+        transform: translate3d(0, -2%, 0);
+        box-shadow: 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &__thumbnail {
+      width: $thumbnail_width;
+      height: 19.4rem;
+
+      &--small {
+        width: $thumbnail_small_width;
+        height: 13.4rem;
+      }
+    }
+
+    &__summary {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &__body {
+      width: calc( 100% - #{$thumbnail_offset} );
+      position: relative;
+    }
+
+    &__body--small {
+      width: calc( 100% - #{$thumbnail_small_offset} );
+      position: relative;
+    }
+
+    &__meta {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    &__author {
+      order: 0;
+    }
+
+    &__date {
+      display: inline-block;
+    }
+
+    &__location {
+      display: inline-block;
+      margin-left: 2rem;
+      margin-top: 0;
+    }
+  }
+}

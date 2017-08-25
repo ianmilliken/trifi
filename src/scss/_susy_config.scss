@@ -1,0 +1,27 @@
+/*$susy: (
+  columns: 16,
+  gutter-position: inside,
+  global-box-sizing: border-box,
+);
+
+@include border-box-sizing;
+
+$map-small: (
+  columns: 6,
+  container: auto,
+  gutters: 0
+);
+
+$map-large: (
+  columns: 16,
+  container: 120rem,
+  gutters: 1/4
+);
+
+@media only screen and (min-width: 0) {
+  @include layout($map-small);
+}
+
+@media (min-width: 52rem) {
+  @include layout($map-large);
+}*/
