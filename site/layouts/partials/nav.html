@@ -10,17 +10,16 @@
 					</g>
 				</svg>
 			</a>
+			{{ if .Site.Menus.main }}
 			<ul class="site-nav__list u-hide-for-small">
+				{{ $currentNode := . }}
+        {{ range .Site.Menus.main }}
 				<li class="site-nav__list-item">
-					<a class="site-nav__link" href="/">Journals</a>
+					<a class="site-nav__link {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}site-nav__link--active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
 				</li>
-				<li class="site-nav__list-item">
-					<a class="site-nav__link" href="/">Snapshots</a>
-				</li>
-				<li class="site-nav__list-item">
-					<a class="site-nav__link" href="/">About Us</a>
-				</li>
+				{{ end }}
 			</ul>
+			{{ end }}
 			<a class="site-nav__hamburger u-show-for-small" href="/">
 				<div class="site-nav__hamburger__group">
 					<div class="site-nav__hamburger__icon"></div>

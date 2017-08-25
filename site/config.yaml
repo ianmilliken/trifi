@@ -1,0 +1,26 @@
+baseurl: "/"
+languageCode: "en-us"
+title: "Two New Natives"
+
+menu:
+  main:
+    - Name: "Journal"
+      URL: "/journal/"
+    - Name: "Snapshots"
+      URL: "/snapshots/"
+    - Name: "About Us"
+      URL: "/about/"
+
+social:
+  - Name: "Facebook"
+    ClassName: "fa-facebook"
+    URL: "https://www.facebook.com/twonewnatives/"
+  - Name: "Twitter"
+    ClassName: "fa-twitter"
+    URL: "https://twitter.com/twonewnatives"
+  - Name: "Instagram"
+    ClassName: "fa-instagram"
+    URL: "https://www.instagram.com/twonewnatives/"
+  - Name: "Facebook"
+    ClassName: "fa-500px"
+    URL: "https://500px.com/twonewnatives"
