@@ -1,15 +1,77 @@
-{{ partial "head" . }}
+{{ define "main" }}
 
-{{ partial "nav" . }}
+{{ $baseURL := .Site.BaseURL }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/home/jumbotron.jpg" "title" "Great coffee with a conscience" "subtitle" "Support sustainable farming while enjoying a cup") }}
+<div class="p-banner">
+  <div class="container u-center-group">
+    <div class="p-banner__background">
 
-{{ partial "short-text" (dict "heading" "Why Kaldi?" "text" "Kaldi is the coffee store for everyone who believes that great coffee shouldn't just taste good, it should do good too. We source all of our beans directly from small scale sustainable farmers and make sure part of the profits are reinvested in their communities.")}}
+    </div>
+    <div class="u-group">
+      <div class="p-banner__location">
+        <i class="fa fa-map-marker"></i>
+        City, Country
+      </div>
+      <div class="p-banner__title">
+        A title goes here
+      </div>
+      <div class="p-banner__teaser u-hide-for-small">
+        A teaser goes here, and it will be delicious
+      </div>
+      <a class="p-banner__button" href="/">Read More</a>
+    </div>
+  </div>
+</div>
 
-{{ partial "2-up" (dict "heading" "What we offer" "description" "Kaldi is the ultimate spot for coffee lovers who want to learn about their java’s origin and support the farmers that grew it. We take coffee production, roasting and brewing seriously and we’re glad to pass that knowledge to anyone." "svg1" "img/illustrations/coffee.svg" "text1" "We sell green and roasted coffee beans that are sourced directly from independent farmers and farm cooperatives. We’re proud to offer a variety of coffee beans grown with great care for the environment and local communities. Check our post or contact us directly for current availability." "svg2" "/img/illustrations/coffee-gear.svg" "text2" "We offer a small, but carefully curated selection of brewing gear and tools for every taste and experience level. No matter if you roast your own beans or just bought your first french press, you’ll find a gadget to fall in love with in our shop." "buttonText" "See all products" "buttonLink" "/products"  ) }}
+<div class="container">
+  <!-- Journals -->
+  <section class="container__half">
+    <h2 class="listings-header__title">Latest Journals</h2>
+    <section class="listings-body">
+      <ul class="article-list">
+        <li class="article-item--small">
+          <a class="article-item__link" href="/">
+            <img class="article-item__thumbnail--small" src="" alt="Post image"/>
+            <div class="article-item__body--small">
+              <div class="article-item__title">Journal title</div>
+              <div class="article-item__summary">Journal summary goes here</div>
+              <div class="article-item__meta">
+                <div class="u-group">
+                  <div class="article-item__date">
+                    <i class="fa fa-clock-o"></i> Mon 23 Jan 2017
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+  <!-- Snapshots -->
+  <section class="container__half">
+    <h2 class="listings-header__title">Latest Snapshots</h2>
+    <section class="listings-body">
+      <ul class="article-list">
+        <li class="article-item--small">
+          <a class="article-item__link" href="/">
+            <img class="article-item__thumbnail--small" src="" alt="Post image"/>
+            <div class="article-item__body--small">
+              <div class="article-item__title">Snapshot title</div>
+              <div class="article-item__summary">Snapshot summary goes here</div>
+              <div class="article-item__meta">
+                <div class="u-group">
+                  <div class="article-item__date">
+                    <i class="fa fa-clock-o"></i> Mon 23 Jan 2017
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
 
-{{ partial "text-and-image" (dict "heading" "Our values" "text" "Coffee is an amazing part of human culture but it has a dark side too – one of colonialism and mindless abuse of natural resources and human lives. We want to turn this around and return the coffee trade to the drink’s exhilarating, empowering and unifying nature." "buttonText" "Read more" "buttonLink" "/values") }}
-
-{{ partial "blog" . }}
-
-{{ partial "footer" . }}
+{{ end }}

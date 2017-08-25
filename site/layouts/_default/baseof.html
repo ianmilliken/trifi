@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="text/html" http-equiv="Content-Type" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <!-- Blocks may include default content. -->
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,400i,600,700,800|Yellowtail">
+    <link rel="stylesheet" href="/css/app.css" as="style" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    {{ partial "nav" . }}
+    <div class="body">
+      {{ block "main" . }}{{ end }}
+    </div>
+    {{ partial "footer" . }}
+  </body>
+</html>
