@@ -96,3 +96,4 @@ But how do we know it was a scam? I mean definitively? After the whole shin dig 
 What we’ve learned is that there are wankers everywhere you go, and they can be convincingly deceptive. Despite that, we wouldn’t recommend avoiding Guilin, it’s a stunning place and the people were generally lovely. Go there, don’t get scammed, and if you meet an English teacher on the street, don’t try his brother’s tea or his wife’s art.
 
 
+
