@@ -11,6 +11,8 @@ teaser: >-
 image: /img/shanghai-1481.jpg
 ---
 
+THIS IS WORKING
+
 After a few weeks of being in China, Clare and I were used to gathering a bit (tons) of attention wherever we went. The locals would gawk with limp jaws, snap pictures with their cameras peacocking, and kick up broken conversations whenever they could. There was no blending in.
 
 At first all of the attention was unsettling, it was like being an anxious teenager and going out to a public place knowing that you had a bullseye-shaped spot in the middle of your forehead. But after a few positive encounters we learned to embrace it. We felt like b-grade celebrities and became desensitised to the attention. The paranoid Englishman inside of us was paralytic drunk on friendly “Ni Hao!”s and our guard was down, we’d talk to anyone.
@@ -94,6 +96,7 @@ Fortunately we avoided being caught by the scam two nights running, the first ni
 But how do we know it was a scam? I mean definitively? After the whole shin dig we looked online for “Guilin tea scam”. It’s a fairly big hit, and unfortunately some people have been at the rough end of it. The tea isn’t actually free (surprise surprise) and ends up costing an extortionate amount, and if you can’t pay you may be introduced to some fake police officers with pretty scary threats.
 
 What we’ve learned is that there are wankers everywhere you go, and they can be convincingly deceptive. Despite that, we wouldn’t recommend avoiding Guilin, it’s a stunning place and the people were generally lovely. Go there, don’t get scammed, and if you meet an English teacher on the street, don’t try his brother’s tea or his wife’s art.
+
 
 
 
