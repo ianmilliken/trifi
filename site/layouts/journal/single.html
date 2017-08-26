@@ -2,8 +2,28 @@
 
 {{ $baseURL := .Site.BaseURL }}
 
-<div>
-  JOURNAL SINGLE
-</div>
+<article class="j-post">
+	<section class="p-banner">
+		<div class="container u-center-group">
+			<div class="p-banner__background"></div>
+			<div class="u-group">
+				<div class="p-banner__location">
+					<i class="fa fa-map-marker"></i> {{ .Params.city }}, {{ .Params.country }}
+				</div>
+				<div class="p-banner__title">
+					{{ .Title }}
+				</div>
+				<div class="p-banner__teaser u-hide-for-small">
+					{{ .Params.teaser }}
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		<section class="j-post__body">
+			{{ .Content }}
+		</section>
+	</div>
+</article>
 
 {{ end }}

@@ -10,31 +10,35 @@
 </div>
 
 <section class="listings-body">
+  {{ if .Data.Pages }}
   <ul class="article-list">
+    {{ range .Data.Pages }}
     <li class="article-item">
-      <a class="article-item__link" href="">
+      <a class="article-item__link" href="{{ .Permalink }}">
         <img class="article-item__thumbnail" src="" alt="Article Image"/>
         <div class="article-item__body">
-          <div class="article-item__title">Item Title</div>
-          <div class="article-item__summary">Item teaser</div>
+          <div class="article-item__title">{{ .Title }}</div>
+          <div class="article-item__summary">{{ .Params.teaser }}</div>
           <div class="article-item__meta">
             <div class="article-item__author">
               <img class="article-item__author__image" src="" alt="Author Image"/>
-              <div class="article-item__author__name"><span>Author Name</span></div>
+              <div class="article-item__author__name"><span>{{ .Params.author }}</span></div>
             </div>
             <div class="u-group--unstyled">
               <div class="article-item__date">
-                <i class="fa fa-clock-o"></i> Post date
+                <i class="fa fa-clock-o"></i> {{ .Date.Format "Mon 1 Jan 2006" }}
               </div>
               <div class="article-item__location">
-                <i class="fa fa-map-marker"></i> City, Country
+                <i class="fa fa-map-marker"></i> {{ .Params.city }}, {{ .Params.country }}
               </div>
             </div>
           </div>
         </div>
       </a>
     </li>
+    {{ end }}
   </ul>
+  {{ end }}
 </section>
 
 {{ end }}
