@@ -10,31 +10,24 @@
 					</g>
 				</svg>
 			</a>
+			{{ if .Site.Menus.footer }}
 			<ul class="site-footer__list u-hide-for-small">
+				{{ range .Site.Menus.footer }}
 				<li class="site-footer__list-item">
-					<a class="site-footer__link" href="/">Journal</a>
+					<a class="site-footer__link" href="{{ .URL }}">{{ .Name }}</a>
 				</li>
-				<li class="site-footer__list-item">
-					<a class="site-footer__link" href="/">Snapshots</a>
-				</li>
-				<li class="site-footer__list-item">
-					<a class="site-footer__link" href="/">About us</a>
-				</li>
+				{{ end }}
 			</ul>
+			{{ end }}
+			{{ if .Site.Params.social }}
 			<ul class="social__list">
+				{{ range .Site.Params.social }}
 				<li class="social__list-item">
-					<a class="social__link" href="/"><i class="fa fa-facebook"></i></a>
+					<a class="social__link" href="{{ .URL }}"><i class="fa {{ .ClassName }}"></i></a>
 				</li>
-				<li class="social__list-item">
-					<a class="social__link" href="/"><i class="fa fa-twitter"></i></a>
-				</li>
-				<li class="social__list-item">
-					<a class="social__link" href="/"><i class="fa fa-instagram"></i></a>
-				</li>
-				<li class="social__list-item">
-					<a class="social__link" href="/"><i class="fa fa-500px"></i></a>
-				</li>
+				{{ end }}
 			</ul>
+			{{ end }}
 		</div>
 	</div>
 </footer>
