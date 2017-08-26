@@ -1,13 +1,12 @@
 ---
 title: The Bamboo Tea Scam
 date: 2017-01-04T15:04:10.000Z
-draft: false
-
 teaser: "Most friendly talkative strangers you meet whilst traveling are just that, but some of them are wankers too."
-
+image: /img/moon-0815.jpg
 author: Ian
 city: "Guilin"
 country: "China"
+draft: false
 ---
 
 After a few weeks of being in China, Clare and I were used to gathering a bit (tons) of attention wherever we went. The locals would gawk with limp jaws, snap pictures with their cameras peacocking, and kick up broken conversations whenever they could. There was no blending in.

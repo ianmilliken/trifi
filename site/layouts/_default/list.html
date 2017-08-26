@@ -15,7 +15,7 @@
     {{ range .Data.Pages }}
     <li class="article-item">
       <a class="article-item__link" href="{{ .Permalink }}">
-        <img class="article-item__thumbnail" src="" alt="Article Image"/>
+        <img class="article-item__thumbnail" src="{{ .Params.image }}" alt="{{ .Title }}"/>
         <div class="article-item__body">
           <div class="article-item__title">{{ .Title }}</div>
           <div class="article-item__summary">{{ .Params.teaser }}</div>
