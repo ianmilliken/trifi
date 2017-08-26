@@ -2,6 +2,7 @@
 title: About
 date: 2017-01-04T15:04:10.000Z
 draft: false
----
 
-About
+page_title: "We're the Two New Natives"
+page_intro: "But you can call us Clare and Ian..."
+---
