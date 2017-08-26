@@ -7,8 +7,7 @@
 
 // Pull in application dependencies
 @import "susy";
-//@import "font-awesome-sprockets";
-//@import "font-awesome";
+@import "./node_modules/font-awesome/scss/font-awesome";
 
 // Pull in application stylesheets
 @import "reset";

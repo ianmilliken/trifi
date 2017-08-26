@@ -37,8 +37,8 @@ gulp.task("cms", () => {
     .pipe(browserSync.stream())
 });
 
-gulp.task("build", ["css", "js", "hugo", "cms"]);
-gulp.task("build-preview", ["css", "js", "hugo-preview"]);
+gulp.task("build", ["sass", "fonts", "js", "hugo", "cms"]);
+gulp.task("build-preview", ["sass", "fonts", "js", "hugo-preview"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -63,6 +63,13 @@ gulp.task("sass", () => (
   }))
   .pipe(gulp.dest("./dist/css"))
   .pipe(browserSync.stream())
+));
+
+// FONTS
+gulp.task("fonts", () => (
+  gulp.src("./node_modules/font-awesome/fonts/**.*")
+    .pipe(gulp.dest('./dist/fonts'))
+    .pipe(browserSync.stream())
 ));
 
 gulp.task("js", (cb) => {
@@ -95,7 +102,7 @@ gulp.task("svg", () => {
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
-gulp.task("server", ["hugo", "sass", "js", "svg", "cms"], () => {
+gulp.task("server", ["hugo", "sass", "fonts", "js", "svg", "cms"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
