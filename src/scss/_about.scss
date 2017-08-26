@@ -1,0 +1,66 @@
+@include bp-x-small {
+
+  .about {
+
+    &-intro {
+      width: span(16);
+
+      & p {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-image {
+      width: span(16);
+
+      & > img {
+        border-radius: 0.3rem;
+        box-shadow: 0 0.2rem 3rem 0 rgba(0, 0, 0, 0.15);
+        display: block;
+        height: auto;
+        width: 100%;
+        max-width: 40rem;
+        margin: 0 auto;
+      }
+    }
+
+    &-list {
+
+      &__item {
+        list-style: none;
+        width: span(8);
+      }
+
+      &__link {
+        font-family: $sans_font;
+        font-size: 1.5rem;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        border: 0.1rem solid;
+        border-radius: 3rem;
+        padding: 1rem;
+        margin: 0.5rem 1rem;
+      }
+    }
+  }
+}
+
+@include bp-large {
+
+  .about {
+
+    &-intro {
+      width: span(8);
+
+      & p {
+        line-height: 1.82;
+        margin-right: 2rem;
+      }
+    }
+
+    &-image {
+      width: span(8);
+    }
+  }
+}

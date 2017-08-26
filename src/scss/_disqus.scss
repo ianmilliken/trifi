@@ -1,0 +1,14 @@
+@include bp-x-small {
+
+  #disqus_thread {
+    @include content-width(54rem);
+    margin-bottom: 4rem;
+  }
+}
+
+@include bp-large {
+
+  #disqus_thread {
+    @include content-width(76.8rem);
+  }
+}

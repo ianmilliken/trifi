@@ -23,6 +23,7 @@
 
   p {
     font-size: 1.6rem;
+    font-weight: 300;
     line-height: $paragraph_lineheight;
   }
 
@@ -37,7 +38,7 @@
     padding: 0 2rem;
 
     &__half {
-      //@include span(16 of 16);
+      width: span(16);
     }
   }
 
@@ -52,7 +53,7 @@
 @include bp-medium {
 
   h1 {
-    font-size: 4rem;
+    font-size: 4.6rem;
   }
 
   h2 {
@@ -71,10 +72,14 @@
     font-size: 1.7rem
   }
 
+}
+
+@include bp-large {
+
   .container {
 
     &__half {
-      //@include span(8 of 16);
+      width: span(8);
     }
   }
 

@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+{{ $baseURL := .Site.BaseURL }}
+
+<div class='container u-spacer u-after-site-nav'>
+  <header class='listings-header'>
+    <h1 class='listings-header__title'>We’re the Two New Natives</h1>
+    <p class='listings-header__intro'>But you can call us Clare and Ian</p>
+  </header>
+  <section class='listings-body'>
+    <div class='u-clear'>
+      <div class='about-intro'>
+        <p>We’re Clare and Ian – a couple from the UK who decided that it was about time we saw some of the world. So, we planned and saved for a year and then packed our bags, left our jobs, and began our adventure on September 9th, 2016. </p>
+<p>Two New Natives is a place for us to share our stories and experiences for the people who can’t be here with us. But it’s also a little hub of knowledge for would-be backpackers and travel novices alike. We’ve learned a lot of do’s and don’t’s that you won’t find anywhere else but here.</p>
+      </div>
+      <div class='about-image'>
+        <img src="https://ipm-lmapp.s3-eu-west-1.amazonaws.com/sites/581b3983a7e1140003ab3900/pages/587f416c21532a0004f76ade/files/clare-and-ian.jpg?1484744958">
+      </div>
+    </div>
+  </section>
+  <section class='j-post__body'>
+    <h2>
+      Leaving 9-till-5 behind
+    </h2>
+    <p>
+      <p>Sitting at a desk all day, most days, was never what we’d imagined our lives to be. Ian grew up with the likes of Indiana Jones and other iconic adventurers, whilst Clare was always one to explore and seek out the thrills of new things. Where does a desk job fit in? Although we were comfy making our way up the career ladder, we knew that settling down and being restricted by mundane routine was no real life for us. Together we decided to leave the 9-5 behind and go on our own big adventure!</p><p>Travelling as Two New Natives has given us the chance to learn more about the world and the wonderful things it has to offer.</p>
+    </p>
+    <h2>
+      What you’ll find here
+    </h2>
+    <p>
+      A collection of our thoughts and travel experiences, plus snapshots from all our destinations. We initially built Two New Natives as a travel diary for our family and friends, but we hope that our stories - our backpacking successes and blunders along the way - can inspire and help other fellow travellers with their adventures too.
+    </p>
+    <h2>
+      Where else you can find us
+    </h2>
+    <p>
+      <p>Check out our social pages for all our travel action! Or share our stuff if you think you know somebody who might like it ;)</p>
+    </p>
+
+    {{ if .Site.Params.social }}
+    <ul class='about-list'>
+      {{ range .Site.Params.social }}
+      <li class='about-list__item'>
+        <a class="about-list__link" href="{{ .URL }}" target="_blank">
+          <i aria-hidden="true" class="fa {{ .ClassName }}"></i> {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </section>
+</div>
+
+{{ end }}

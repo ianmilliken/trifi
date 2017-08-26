@@ -16,11 +16,11 @@
 }
 
 .u-border-top {
-  border-top: 0.1rem solid #E4E4E4;
+  border-top: 0.1rem solid $grey;
 }
 
 .u-border-bottom {
-  border-bottom: 0.1rem solid #E4E4E4;
+  border-bottom: 0.1rem solid $grey;
 }
 
 .u-disabled {
@@ -52,6 +52,17 @@
     max-width: 54rem;
     width: 100%;
   }
+
+  .u-clear {
+    clear: both;
+  }
+
+  /* Temporary class for homepage */
+  .u-ifl {
+    border-bottom: 0.1rem solid $grey;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+  }
 }
 
 @include bp-medium {
@@ -70,5 +81,14 @@
 
   .u-group {
     max-width: 76.8rem;
+  }
+}
+
+@include bp-large {
+  /* Temporary class for homepage */
+  .u-ifl {
+    border-bottom: none;
+    margin-bottom: auto;
+    padding-bottom: auto;
   }
 }

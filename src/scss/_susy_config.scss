@@ -25,3 +25,10 @@ $map-large: (
 @media (min-width: 52rem) {
   @include layout($map-large);
 }*/
+
+$susy: (
+  'columns': susy-repeat(16),
+  'gutters': 0.25,
+  'spread': 'narrow',
+  'container-spread': 'narrow'
+);
