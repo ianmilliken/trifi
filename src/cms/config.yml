@@ -18,6 +18,17 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Teaser", name: "teaser", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "snapshots"
+    label: "Snapshots"
+    folder: "site/content/snapshots"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "authors", widget: "string" }
+      - { label: "Teaser", name: "teaser", widget: "text" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"
     files:
