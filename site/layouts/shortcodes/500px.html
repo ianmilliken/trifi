@@ -1,3 +1,13 @@
-<div>
-  I AM THE 500PX EMBEDDAAA
+<div class="embed-narrow">
+
+  <div class='pixels-photo'>
+    <p>
+      <img src={{ .Get "src" }} alt={{ .Get "alt" }}>
+    </p>
+    <a href={{ .Get "link" }} alt={{ .Get "alt" }}></a>
+  </div>
+  <script type='text/javascript' src='https://500px.com/embed.js'></script>
+
 </div>
+
+<p><i class="fa fa-camera"></i>{{ .Inner }}</p>
