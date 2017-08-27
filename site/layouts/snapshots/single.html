@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{ $baseURL := .Site.BaseURL }}
+
+<article class="content">
+  <header class="container">
+    <div class="content-narrow u-center">
+      <h1>{{ .Title }}</h1>
+      <p class="content__intro">{{ .Params.teaser }}</p>
+    </div>
+  </header>
+  <section class="container">
+    <div class="content__body">
+      {{ .Content }}
+    </div>
+  </section>
+</article>
+
+
+{{ end }}
