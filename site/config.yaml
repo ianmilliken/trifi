@@ -8,18 +8,24 @@ menu:
   main:
     - Name: "Journal"
       URL: "/journal/"
+      weight: 1
     - Name: "Snapshots"
       URL: "/snapshots/"
+      weight: 2
     - Name: "About Us"
       URL: "/about/"
-      
+      weight: 3
+
   footer:
     - Name: "Journal"
       URL: "/journal/"
+      weight: 1
     - Name: "Snapshots"
       URL: "/snapshots/"
+      weight: 2
     - Name: "About Us"
       URL: "/about/"
+      weight: 3
 
 taxonomies:
   tag: "tags"
