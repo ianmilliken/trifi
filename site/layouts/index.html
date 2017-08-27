@@ -2,76 +2,55 @@
 
 {{ $baseURL := .Site.BaseURL }}
 
+{{ range first 1 (where .Data.Pages.ByDate "Section" "journal") }}
 <div class="p-banner">
   <div class="container u-center-group">
-    <div class="p-banner__background">
-
-    </div>
+    <div class="p-banner__background" style="background-image: url({{ .Params.image }})"></div>
     <div class="u-group">
       <div class="p-banner__location">
         <i class="fa fa-map-marker"></i>
-        City, Country
+        {{ .Params.city }}, {{ .Params.Country }}
       </div>
       <div class="p-banner__title">
-        A title goes here
+        {{ .Title }}
       </div>
       <div class="p-banner__teaser u-hide-for-small">
-        A teaser goes here, and it will be delicious
+        {{ .Params.teaser }}
       </div>
-      <a class="p-banner__button" href="/">Read More</a>
+      <a class="p-banner__button" href="{{ .Permalink }}">Read More</a>
     </div>
   </div>
 </div>
+{{ end }}
 
 <div class="container">
-  <!-- Journals -->
+  {{ range .Data.Pages.GroupBy "Section" }}
   <section class="container__half">
-    <h2 class="listings-header__title">Latest Journals</h2>
+    <h2 class="listings-header__title">{{ if eq .Key "journal" }} Latest Journals {{ else }} Latest Snapshots {{ end }}</h2>
     <section class="listings-body">
       <ul class="article-list">
+        {{ range .Pages.ByLastmod }}
         <li class="article-item--small">
-          <a class="article-item__link" href="/">
-            <img class="article-item__thumbnail--small" src="" alt="Post image"/>
+          <a class="article-item__link" href="{{ .Permalink }}">
+            <img class="article-item__thumbnail--small" src="{{ .Params.image }}" alt="{{ .Title }}"/>
             <div class="article-item__body--small">
-              <div class="article-item__title">Journal title</div>
-              <div class="article-item__summary">Journal summary goes here</div>
+              <div class="article-item__title">{{ .Title }}</div>
+              <div class="article-item__summary">{{ .Params.teaser }}</div>
               <div class="article-item__meta">
                 <div class="u-group">
                   <div class="article-item__date">
-                    <i class="fa fa-clock-o"></i> Mon 23 Jan 2017
+                    <i class="fa fa-clock-o"></i> {{ .Date.Format "Mon 1 Jan 2006" }}
                   </div>
                 </div>
               </div>
             </div>
           </a>
         </li>
+        {{ end }}
       </ul>
     </section>
   </section>
-  <!-- Snapshots -->
-  <section class="container__half">
-    <h2 class="listings-header__title">Latest Snapshots</h2>
-    <section class="listings-body">
-      <ul class="article-list">
-        <li class="article-item--small">
-          <a class="article-item__link" href="/">
-            <img class="article-item__thumbnail--small" src="" alt="Post image"/>
-            <div class="article-item__body--small">
-              <div class="article-item__title">Snapshot title</div>
-              <div class="article-item__summary">Snapshot summary goes here</div>
-              <div class="article-item__meta">
-                <div class="u-group">
-                  <div class="article-item__date">
-                    <i class="fa fa-clock-o"></i> Mon 23 Jan 2017
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </section>
-  </section>
+  {{ end }}
 </div>
 
 {{ end }}
