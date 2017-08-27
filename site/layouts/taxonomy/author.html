@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+{{ $baseURL := .Site.BaseURL }}
+
+<div class="container" style="padding-top: 15rem">
+  <h1><span style="font-size: 60%; color: #DDD">Author: </span><br />{{ .Title }}</h1>
+</div>
+
+<div>
+  {{ .Params.tagline }}
+  <ul>
+  {{ range .Data.Pages }}
+     <li>
+       <a href="{{ .Permalink }}">{{ .Title }}</a>
+       {{ .Params.tagline }}
+     </li>
+  {{ end }}
+  </ul>
+</div>
+
+{{ end }}

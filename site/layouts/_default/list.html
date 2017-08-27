@@ -20,10 +20,22 @@
           <div class="article-item__title">{{ .Title }}</div>
           <div class="article-item__summary">{{ .Params.teaser }}</div>
           <div class="article-item__meta">
+            {{ with .Params.authors }}
+            {{ range . }}
+            {{ if eq . "Ian" }}
             <div class="article-item__author">
-              <img class="article-item__author__image" src="" alt="Author Image"/>
-              <div class="article-item__author__name"><span>{{ .Params.author }}</span></div>
+              <img class="article-item__author__image" src="/img/ian.jpg" alt="{{ . }}"/>
+              <div class="article-item__author__name"><span>{{ . }}</span></div>
             </div>
+            {{ else }}
+            <div class="article-item__author">
+              <img class="article-item__author__image" src="/img/clare.jpg" alt="{{ . }}"/>
+              <div class="article-item__author__name"><span>{{ . }}</span></div>
+            </div>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+
             <div class="u-group--unstyled">
               <div class="article-item__date">
                 <i class="fa fa-clock-o"></i> {{ .Date.Format "Mon 1 Jan 2006" }}

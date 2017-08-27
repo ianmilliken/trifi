@@ -2,6 +2,8 @@ baseurl: "/"
 languageCode: "en-us"
 title: "Two New Natives"
 
+disqusShortname: "twonewnatives"
+
 menu:
   main:
     - Name: "Journal"
@@ -10,6 +12,7 @@ menu:
       URL: "/snapshots/"
     - Name: "About Us"
       URL: "/about/"
+      
   footer:
     - Name: "Journal"
       URL: "/journal/"
@@ -17,6 +20,11 @@ menu:
       URL: "/snapshots/"
     - Name: "About Us"
       URL: "/about/"
+
+taxonomies:
+  tag: "tags"
+  location: "locations"
+  author: "authors"
 
 params:
   social:
