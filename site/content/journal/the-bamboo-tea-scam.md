@@ -3,7 +3,7 @@ authors: ["Ian"]
 tags: ["china", "stories"]
 city: Guilin
 country: China
-date: 2017-01-04T15:04:10.000Z
+date: 2017-01-04T15:04:10Z
 draft: false
 title: The Bamboo Tea Scam
 teaser: >-
