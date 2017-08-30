@@ -1,18 +1,19 @@
 ---
-authors: ["Clare"]
-tags: ["china", "stories"]
+authors:
+  - Clare
 city: Beijing
 country: China
-date: 2017-01-04T15:04:10.000Z
+date: 01/15/2017 8:30 AM
 draft: false
+tags:
+  - china
+  - stories
 title: Unlucky Number 7
 teaser: >-
-  When it comes to making friends whilst travelling, avoid desperation like the plague.
-image: /img/shanghai-1481.jpg
+  When it comes to making friends whilst travelling, avoid desperation like the
+  plague.
+image: /img/night_market_China.png
 ---
-
-Sun 15 Jan 2017
-
 Confessed Travelholic talks about 8 kinds of travelers you’ll meet on the road:
 
 1. **Mr. Aspiring Underwear Model**
@@ -79,3 +80,4 @@ The next day I was glad to be alone with Ian again, however at breakfast our fri
 I don't mean this to be a big old bitching session, it's just that this character was unlike anything I expected. When I think of a traveller I picture a kind hippie looking being with beach-wave hair and a cool, calm manner. Or even a wild party-er who's up for anything fun. I suppose this was my naivety, but I was surprised I'd met such a self-centered person.
 
 Anyway I learnt my lesson, and can thankfully say we did meet some lovely people at that hostel naturally, a few days later. There are many types of people out there and giving them a chance is fine and well. But if they're not my cup of tea I will no longer try to make them like me and end up in a muddle!
+
