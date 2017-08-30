@@ -35,6 +35,9 @@
 
   .container {
     //@include container();
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 2rem;
 
     &__half {
