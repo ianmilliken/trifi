@@ -1,18 +1,19 @@
 ---
-authors: ["Ian"]
-tags: ["china", "stories"]
+authors:
+  - Ian
 city: Yichang
 country: China
-date: 2017-01-04T15:04:10.000Z
+date: 01/23/2017 12:30 PM
 draft: false
-title: The 'By Yao Xie Xie' Incident
+tags:
+  - china
+  - stories
+title: The 'Bu Yao Xie Xie' Incident
 teaser: >-
-  Never mess with a girl who didn't get a good breakfast in her and has been on the edge for a few days.
-image: /img/shanghai-1481.jpg
+  Never mess with a girl who didn't get a good breakfast in her and has been on
+  the edge for a few days.
+image: /img/yichang-1567.jpg
 ---
-
-Mon 23 Jan 2017
-
 “Bu Yao Xie Xie” – it's a polite way to say "I don't want what you're pushing", and thanks to the importance of tones in Mandarin there is really only one way to say it right. But in the monumentally irritable state that arose from not getting what she wanted for breakfast and the locals swarming her like she was a pot of delicious honey, Clare found a brand new way to say it.
 
 ## Mangos for breakfast, please
@@ -54,3 +55,4 @@ I’m quite glad we were hassled to be honest, the rest of our day was filled wi
 Travelling for any prolonged amount of time is full of fun and unexpected delights, but it also has its stresses. If you don’t take enough time off from your time off (which I know might sound stupid), those stresses can boil up and turn even the chirpiest of people into a ticking time bomb. However, you can’t always do something about that, so if you feel like you’re going to blow your lid, don’t do it on your travel buddy.
 
 Without thinking too much about it though, there is one very obvious lesson – when a woman expects some mango for breakfast, for god’s sake, do not give her pizza.
+
