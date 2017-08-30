@@ -84,8 +84,8 @@
 @include bp-medium {
 
   .p-banner {
-    height: 80vh;
-    min-height: 48rem;
+    height: 60vh;
+    min-height: 40rem;
     max-height: 80rem;
     padding-top: 11rem;
 
@@ -98,12 +98,5 @@
       padding: 1.4rem 3rem;
       margin-top: 0;
     }
-  }
-}
-
-include bp-medium {
-
-  .p-banner {
-    min-height: 40rem;
   }
 }

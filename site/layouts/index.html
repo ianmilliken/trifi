@@ -24,7 +24,7 @@
 {{ end }}
 
 <div class="container u-spacer">
-  <div class="flexbox">
+  <div class="flexbox--no-align">
     {{ range .Data.Pages.GroupBy "Section" }}
     <section class="container__half">
       <h2 class="listings-header__title">{{ if eq .Key "journal" }} Latest Journals {{ else }} Latest Snapshots {{ end }}</h2>
