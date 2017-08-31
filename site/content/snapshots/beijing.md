@@ -1,6 +1,6 @@
 ---
 title: Beijing
-date: 2017-03-23T15:04:10Z
+date: 2017-03-28T15:04:10Z
 teaser: >-
   Beijing is a vast super-metropolis that we barely scratched the surface of. The streets burrow deep into the landscape and carve out a dynamic culture bustling with great food, fun people, and a million things to do...
 image: ""
@@ -10,7 +10,7 @@ tags:
   - Beijing
   - China
 city: Beijing
-country: "China"
+country: China
 ---
 
 {{< 500px

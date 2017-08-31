@@ -1,6 +1,6 @@
 ---
 title: Pingyao
-date: 2017-02-29T15:04:10Z
+date: 2017-03-27T12:37:17Z
 teaser: >-
   We arrived expecting a small and quiet traditional town, but we met by a commercial tourist infested nightmare. It still had its merits, but China's economic boom really does appear to have swallowed up everywhere.
 image: ""
@@ -12,6 +12,8 @@ tags:
 city: Pingyao
 country: China
 ---
+
+2017-02-29T15:04:10.000Z
 
 {{< 500px
   src="https://drscdn.500px.org/photo/192001547/m%3D900/v2?user_id=19709765&webp=true&sig=796c9fe9352f69cffaccddc10f7e494ab372a5acbbe5930465098c1e4f592a51"
