@@ -1,16 +1,19 @@
 ---
-title: Shanghai
-date: 2016-09-16T15:04:10Z
-teaser: >-
-  Our first destination was the big and bustling city of Shanghai, characterized by its electric skyline and stylish streets. However we did find pockets of more traditional Chinese culture tucked away in the metropolis - there's more to Shanghai than meets the eye!
-image: ""
 authors:
   - Clare
+city: Shanghai
+country: China
+title: Shanghai
+date: 2016-09-16T15:04:10.000Z
 tags:
   - China
   - Shanghai
-city: Shanghai
-country: China
+teaser: >-
+  Our first destination was the big and bustling city of Shanghai, characterized
+  by its electric skyline and stylish streets. However we did find pockets of
+  more traditional Chinese culture tucked away in the metropolis - there's more
+  to Shanghai than meets the eye!
+image: /img/shanghai-0721.jpg
 ---
 
 {{< 500px
@@ -20,3 +23,4 @@ Our first stop was People's Park in the centre of Shanghai, known for its marria
 {{</ 500px >}}
 
 And here is some interjection! Not everything in here has to have an image attached after all, does it?!
+
