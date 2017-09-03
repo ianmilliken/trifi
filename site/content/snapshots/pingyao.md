@@ -15,8 +15,6 @@ teaser: >-
 image: /img/Pingyao.jpg
 ---
 
-2017-02-29T15:04:10.000Z
-
 {{< 500px
   src="https://drscdn.500px.org/photo/192001547/m%3D900/v2?user_id=19709765&webp=true&sig=796c9fe9352f69cffaccddc10f7e494ab372a5acbbe5930465098c1e4f592a51"
   alt="Streets of Pingyao&#x27;s Old Town by Two New Natives on 500px.com"
@@ -95,4 +93,3 @@ Our resident dog at our hotel. The poor dog was chained up all day and didn't ha
   link="https://500px.com/photo/192001563/jazz-and-karaoke-by-two-new-natives" >}}
 There were quite a few karaoke spots and this one had a very committed woman belting out Chinese hits.
 {{</ 500px >}}
-

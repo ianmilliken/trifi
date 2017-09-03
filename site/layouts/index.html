@@ -2,7 +2,7 @@
 
 {{ $baseURL := .Site.BaseURL }}
 
-{{ range first 1 (where .Data.Pages.ByDate "Section" "journal") }}
+{{ range first 1 (where .Data.Pages.ByDate.Reverse "Section" "journal") }}
 <div class="p-banner">
   <div class="container u-center-group">
     <div class="p-banner__background" style="background-image: url({{ .Params.image }})"></div>
