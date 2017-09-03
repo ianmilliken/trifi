@@ -1,16 +1,18 @@
 ---
-title: Beijing
-date: 2017-03-28T15:04:10Z
-teaser: >-
-  Beijing is a vast super-metropolis that we barely scratched the surface of. The streets burrow deep into the landscape and carve out a dynamic culture bustling with great food, fun people, and a million things to do...
-image: ""
 authors:
   - Clare
+city: Beijing
+country: China
+title: Beijing
+date: 2017-03-28T15:04:10.000Z
 tags:
   - Beijing
   - China
-city: Beijing
-country: China
+teaser: >-
+  Beijing is a vast super-metropolis that we barely scratched the surface of.
+  The streets burrow deep into the landscape and carve out a dynamic culture
+  bustling with great food, fun people, and a million things to do...
+image: /img/Beijing_Hutong.jpg
 ---
 
 {{< 500px
@@ -303,3 +305,4 @@ One of the lit-up restaurants looking out onto the lake.
   link="https://500px.com/photo/194091253/this-dog-is-cooler-than-you-by-two-new-natives" >}}
 The coolest looking dawg we've ever seen, strolling casually down Beijing's streets.
 {{</ 500px >}}
+
