@@ -45,9 +45,12 @@ $thumbnail_small_offset: 22rem;
   }
 
   .article-item {
-    border-bottom: 1px solid $grey;
     margin-bottom: 3rem;
     padding-bottom: 3rem;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $grey;      
+    }
 
     &--small {
       margin-bottom: 2rem;
