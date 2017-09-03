@@ -43,6 +43,6 @@ params:
     - Name: "Instagram"
       ClassName: "fa-instagram"
       URL: "https://www.instagram.com/twonewnatives/"
-    - Name: "Facebook"
+    - Name: "500px"
       ClassName: "fa-500px"
       URL: "https://500px.com/twonewnatives"
