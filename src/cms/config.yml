@@ -7,6 +7,17 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "authors"
+    label: "Authors"
+    folder: "site/content/authors"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Frist Name", name: "first_name", widget: "string" }
+      - { label: "Surame", name: "surname", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "text" }
+      - { label: "Avatar", name: "avatar", widget: "image" }
+
   - name: "journal"
     label: "Journal"
     folder: "site/content/journal"
@@ -14,10 +25,11 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "authors", widget: "string" }
+      - { label: "Author", name: "authors", widget: "relation", collection: "authors", searchFields: "first_name", valueField: "first_name" }
       - { label: "Teaser", name: "teaser", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "snapshots"
     label: "Snapshots"
     folder: "site/content/snapshots"
@@ -25,10 +37,11 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "authors", widget: "string" }
+      - { label: "Author", name: "authors", widget: "relation", collection: "authors", searchFields: "first_name", valueField: "first_name" }
       - { label: "Teaser", name: "teaser", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "pages"
     label: "Pages"
     files:

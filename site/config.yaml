@@ -29,8 +29,6 @@ menu:
 
 taxonomies:
   tag: "tags"
-  location: "locations"
-  author: "authors"
 
 params:
   social:
