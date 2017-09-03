@@ -1,19 +1,19 @@
 ---
-authors: ["Ian"]
-tags: ["china", "stories"]
+authors:
+  - Ian
 city: Guilin
 country: China
-date: 2017-01-04T15:04:10Z
+date: 2017-01-04T15:04:10.000Z
 draft: false
+tags:
+  - china
+  - stories
 title: The Bamboo Tea Scam
 teaser: >-
   Most friendly talkative strangers you meet whilst traveling are just that, but
   some of them are wankers too.
-image: /img/shanghai-1481.jpg
+image: /img/guilin-1683.jpg
 ---
-
-THIS IS WORKING
-
 After a few weeks of being in China, Clare and I were used to gathering a bit (tons) of attention wherever we went. The locals would gawk with limp jaws, snap pictures with their cameras peacocking, and kick up broken conversations whenever they could. There was no blending in.
 
 At first all of the attention was unsettling, it was like being an anxious teenager and going out to a public place knowing that you had a bullseye-shaped spot in the middle of your forehead. But after a few positive encounters we learned to embrace it. We felt like b-grade celebrities and became desensitised to the attention. The paranoid Englishman inside of us was paralytic drunk on friendly “Ni Hao!”s and our guard was down, we’d talk to anyone.
