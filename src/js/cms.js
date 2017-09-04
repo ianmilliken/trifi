@@ -2,6 +2,7 @@ import React from "react";
 import CMS from "netlify-cms";
 
 import JournalPreview from "./cms-preview-templates/journal";
+import AuthorsPreview from "./cms-preview-templates/author";
 
 
 // Example of creating a custom color widget
@@ -18,4 +19,5 @@ class ColorControl extends React.Component {
 
 CMS.registerPreviewStyle("/css/main.css");
 CMS.registerPreviewTemplate("journal", JournalPreview);
+CMS.registerPreviewTemplate("authors", AuthorsPreview);
 CMS.registerWidget("color", ColorControl);

@@ -1,1 +1,13 @@
-{"first_name":"Ian","surname":"Milliken","bio":"Bio!","avatar":"/img/ian.jpg","authors":[{"first_name":"Ian","surname":"Milliken","bio":"Ians bio!","avatar":"/img/ian.jpg"},{"first_name":"Clare","surname":"Evans","bio":"Clares bio!","avatar":"/img/clare.jpg"}]}
+{
+  "authors": [{
+    "first_name": "Ian",
+    "surname": "Milliken",
+    "bio": "Ians bio!",
+    "avatar": "/img/ian.jpg"
+  }, {
+    "first_name": "Clare",
+    "surname": "Evans",
+    "bio": "Clares bio!",
+    "avatar": "/img/clare.jpg"
+  }]
+}
