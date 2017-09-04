@@ -51,13 +51,17 @@ collections: # A list of collections the CMS should be able to edit
         description: "General app settings"
         fields:
           - { label: "App Title", name: "app_title", widget: "string" }
-      - name: "authors2"
+
+      - name: "authors"
         label: "Authors"
-        file: "site/data/authors.yaml"
-        description: "Authors for your platform"
-        widget: list
+        file: "site/data/authors.json"
+        description: "Author descriptions"
         fields:
-          - { label: "First Name", name: "first_name", widget: "string" }
-          - { label: "Surname", name: "surname", widget: "string" }
-          - { label: "Bio", name: "bio", widget: "text" }
-          - { label: "Avatar", name: "avatar", widget: "image" }
+          - name: author
+            label: Author
+            widget: list
+            fields:
+              - { label: "First Name", name: "first_name", widget: "string" }
+              - { label: "Surname", name: "surname", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Avatar", name: "avatar", widget: "image" }
