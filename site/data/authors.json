@@ -1,6 +1,1 @@
-{
-  "first_name":"Ian",
-  "surname":"Milliken",
-  "bio":"Bio!",
-  "avatar":"/img/ian.jpg"
-}
+{"first_name":"Ian","surname":"Milliken","bio":"Bio!","avatar":"/img/ian.jpg","authors":[{"first_name":"Ian","surname":"Milliken","bio":"Ian's bio!","avatar":"/img/ian.jpg"}]}
