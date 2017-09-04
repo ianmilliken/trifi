@@ -8,17 +8,6 @@ public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
 
-  - name: "authors"
-    label: "Authors"
-    folder: "site/content/authors"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Frist Name", name: "first_name", widget: "string" }
-      - { label: "Surame", name: "surname", widget: "string" }
-      - { label: "Bio", name: "bio", widget: "text" }
-      - { label: "Avatar", name: "avatar", widget: "image" }
-
   - name: "journal"
     label: "Journal"
     folder: "site/content/journal"
@@ -66,6 +55,7 @@ collections: # A list of collections the CMS should be able to edit
         label: "Authors"
         file: "site/data/authors.json"
         description: "Authors for your platform"
+        widget: list
         fields:
           - { label: "First Name", name: "first_name", widget: "string" }
           - { label: "Surname", name: "surname", widget: "string" }
