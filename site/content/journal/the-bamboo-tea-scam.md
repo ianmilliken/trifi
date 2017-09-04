@@ -1,5 +1,6 @@
 ---
-authors: ian
+authors:
+ - Ian
 city: Guilin
 country: China
 date: 2017-01-04T15:04:10.000Z
@@ -96,4 +97,3 @@ Fortunately we avoided being caught by the scam two nights running, the first ni
 But how do we know it was a scam? I mean definitively? After the whole shin dig we looked online for “Guilin tea scam”. It’s a fairly big hit, and unfortunately some people have been at the rough end of it. The tea isn’t actually free (surprise surprise) and ends up costing an extortionate amount, and if you can’t pay you may be introduced to some fake police officers with pretty scary threats.
 
 What we’ve learned is that there are wankers everywhere you go, and they can be convincingly deceptive. Despite that, we wouldn’t recommend avoiding Guilin, it’s a stunning place and the people were generally lovely. Go there, don’t get scammed, and if you meet an English teacher on the street, don’t try his brother’s tea or his wife’s art.
-

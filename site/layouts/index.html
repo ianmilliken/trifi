@@ -25,12 +25,12 @@
 
 <div class="container u-spacer">
   <div class="flexbox--no-align">
-    {{ range .Data.Pages.GroupBy "Section" }}
+
     <section class="container__half">
-      <h2 class="listings-header__title">{{ if eq .Key "journal" }} Latest Journals {{ else }} Latest Snapshots {{ end }}</h2>
+      <h2 class="listings-header__title">Latest Journals</h2>
+      {{ range where .Data.Pages "Section" "journal" }}
       <section class="listings-body">
         <ul class="article-list">
-          {{ range .Pages.ByDate.Reverse }}
           <li class="article-item--small">
             <a class="article-item__link" href="{{ .Permalink }}">
               <img class="article-item__thumbnail--small" src="{{ .Params.image }}" alt="{{ .Title }}"/>
@@ -47,11 +47,37 @@
               </div>
             </a>
           </li>
-          {{ end }}
         </ul>
       </section>
+      {{ end }}
     </section>
-    {{ end }}
+
+    <section class="container__half">
+      <h2 class="listings-header__title">Latest Snapshots</h2>
+      {{ range where .Data.Pages "Section" "snapshots" }}
+      <section class="listings-body">
+        <ul class="article-list">
+          <li class="article-item--small">
+            <a class="article-item__link" href="{{ .Permalink }}">
+              <img class="article-item__thumbnail--small" src="{{ .Params.image }}" alt="{{ .Title }}"/>
+              <div class="article-item__body--small">
+                <div class="article-item__title">{{ .Title }}</div>
+                <div class="article-item__summary">{{ .Params.teaser }}</div>
+                <div class="article-item__meta">
+                  <div class="u-group">
+                    <div class="article-item__date">
+                      <i class="fa fa-clock-o"></i> {{ .Date.Format "Mon, 02 Jan 2006" }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+      {{ end }}
+    </section>
+
   </div>
 </div>
 
