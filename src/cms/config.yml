@@ -7,6 +7,7 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+
   - name: "authors"
     label: "Authors"
     folder: "site/content/authors"
@@ -45,9 +46,28 @@ collections: # A list of collections the CMS should be able to edit
   - name: "pages"
     label: "Pages"
     files:
-      - file: "site/content/about/_index.md"
+      - name: "about"
         label: "About us"
-        name: "about"
+        file: "site/content/about/_index.md"
         fields:
-          - {label: Title, name: page_title, widget: "string"}
-          - {label: Intro, name: page_intro, widget: "text"}
+          - { label: Title, name: page_title, widget: "string" }
+          - { label: Intro, name: page_intro, widget: "text" }
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "general"
+        label: "General"
+        file: "site/data/settings.json"
+        description: "General app settings"
+        fields:
+          - { label: "App Title", name: "app_title", widget: "string" }
+      - name: "authors2"
+        label: "Authors"
+        file: "site/data/authors.json"
+        description: "Authors for your platform"
+        fields:
+          - { label: "First Name", name: "first_name", widget: "string" }
+          - { label: "Surname", name: "surname", widget: "string" }
+          - { label: "Bio", name: "bio", widget: "text" }
+          - { label: "Avatar", name: "avatar", widget: "image" }
