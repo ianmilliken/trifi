@@ -1,23 +1,43 @@
 import React from "react";
 import format from "date-fns/format";
 
-export default class PostPreview extends React.Component {
+export default class JournalPreview extends React.Component {
   render() {
-    const {entry, widgetFor} = this.props;
+    const {entry, getAsset, widgetFor} = this.props;
 
-    return <div className="mw6 center ph3 pv4">
-      <h1 className="f2 lh-title b mb3">{ entry.getIn(["data", "title"])}</h1>
-      <div className="flex justify-between grey-3">
-        <div style={{
-          width: "80px",
-          height: "80px"
-        }}></div>
-        <p>{ format(entry.getIn(["data", "date"]), "ddd, MMM D, YYYY") }</p>
-        <p>Read in x minutes</p>
-      </div>
-      <div className="cms mw6">
-        { widgetFor("body") }
-      </div>
-    </div>;
+    let image = getAsset(entry.getIn(["data", "image"]));
+
+    // Bit of a nasty hack to make relative paths work as expected as a background image here
+    if (image && !image.fileObj) {
+      image = window.parent.location.protocol + "//" + window.parent.location.host + image;
+    }
+
+    return (
+      <article className="j-post">
+        <section className="p-banner">
+          <div className="container u-center-group">
+            <div className="p-banner__background" style={{backgroundImage: image && `url(${image})`}}></div>
+            <div className="u-group">
+              <div className="p-banner__location">
+                <i className="fa fa-map-marker"></i>
+                { widgetFor("location") }
+              </div>
+            </div>
+            <h1 className="p-banner__title">
+              { entry.getIn(["data", "title"])}
+            </h1>
+            <div className="p-banner__teaser">
+              { widgetFor("teaser") }
+            </div>
+            <p>{ format(entry.getIn(["data", "date"]), "ddd, MMM D, YYYY") }</p>
+          </div>
+        </section>
+        <div className="cms container">
+          <div className="j-post__body">
+          { widgetFor("body") }
+          </div>
+        </div>
+      </article>
+    );
   }
 }

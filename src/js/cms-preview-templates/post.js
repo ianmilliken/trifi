@@ -13,7 +13,7 @@ export default class PostPreview extends React.Component {
           height: "80px"
         }}></div>
         <p>{ format(entry.getIn(["data", "date"]), "ddd, MMM D, YYYY") }</p>
-        <p>Read in x minutes</p>
+        <p>Read in x minutes hiohihoih</p>
       </div>
       <div className="cms mw6">
         { widgetFor("body") }
