@@ -72,3 +72,15 @@ collections: # A list of collections the CMS should be able to edit
               - { label: "Surname", name: "surname", widget: "string" }
               - { label: "Bio", name: "bio", widget: "text" }
               - { label: "Avatar", name: "avatar", widget: "image" }
+
+      - name: locations
+        label: Locations
+        file: "site/data/locations.json"
+        description: "Location descriptions"
+        fields:
+          - name: location
+            label: Location
+            widget: list
+            fields:
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Country", name: "country", widget: "string" }
