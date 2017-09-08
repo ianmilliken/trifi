@@ -69,7 +69,7 @@ CMS.registerEditorComponent({
           widget: 'text'
         }
       ],
-      pattern: /^{{<\s?500px src="(\S+)" alt="(\S+)" href="(\S+)"\s?>}}\s?(.*)\s?{{<\/\s?500px\s?>}}$/,
+      pattern: /^{{<\s?500px src="(\S+)" alt="(.*)" href="(\S+)"\s?>}}\s?(.*)\s?{{<\/\s?500px\s?>}}$/,
       // fromBlock: get arguement position from pattern regexp
       fromBlock: function(match) {
         return {
