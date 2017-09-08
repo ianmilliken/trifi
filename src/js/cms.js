@@ -91,7 +91,7 @@ CMS.registerEditorComponent({
       //       attribute tags that encose the values themselves
       toPreview: function(obj) {
         return (
-          <div className="embed-narrow">
+          <div className="cms-embed-image">
             <div className="pixels-photo">
               <p>
                 <img src={obj.src} alt={obj.alt} />
