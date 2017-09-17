@@ -15,8 +15,6 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "authors", widget: "text" }
-      - { label: "Location", name: "location", widget: "text" }
       - { label: "Teaser", name: "teaser", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -28,13 +26,6 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - name: author
-        label: Author
-        widget: relation
-        collection: authors
-        searchFields: [first_name, surname]
-        valueField: first_name
-      - { label: "Author", name: "authors", widget: "text" }
       - { label: "Teaser", name: "teaser", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -49,6 +40,16 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Title, name: page_title, widget: "string" }
           - { label: Intro, name: page_intro, widget: "text" }
 
+  - name: authors
+    label: Authors
+    folder: "site/data/authors"
+    create: true
+    fields:
+      - { label: "First Name", name: "first_name", widget: "string" }
+      - { label: "Surname", name: "surname", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "text" }
+      - { label: "Avatar", name: "avatar", widget: "image" }
+
   - name: "settings"
     label: "Settings"
     files:
@@ -58,20 +59,6 @@ collections: # A list of collections the CMS should be able to edit
         description: "General app settings"
         fields:
           - { label: "App Title", name: "app_title", widget: "string" }
-
-      - name: "authors"
-        label: "Authors"
-        file: "site/data/authors.json"
-        description: "Author descriptions"
-        fields:
-          - name: author
-            label: Author
-            widget: list
-            fields:
-              - { label: "First Name", name: "first_name", widget: "string" }
-              - { label: "Surname", name: "surname", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "text" }
-              - { label: "Avatar", name: "avatar", widget: "image" }
 
       - name: locations
         label: Locations
