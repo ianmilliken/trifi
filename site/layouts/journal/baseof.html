@@ -12,11 +12,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-    {{ partial "nav-reverse" . }}
+
     <div class="body">
+      {{ partial "nav-reverse" . }}
       {{ block "main" . }}{{ end }}
+      {{ partial "footer" . }}
+      <div class="site-overlay"></div>
+      {{ partial "site-drawer" . }}
     </div>
-    {{ partial "footer" . }}
-  </body>
+
+  </body>  
+  <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="https://500px.com/embed.js"></script>
 </html>

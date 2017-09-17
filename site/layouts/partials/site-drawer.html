@@ -1,0 +1,16 @@
+<div class="site-drawer u-show-for-small">
+  <div class="site-drawer__close"></div>
+  {{ if .Site.Menus.main }}
+  <ul class="site-drawer__list">
+    {{ $currentNode := . }}
+    <li class="site-drawer__list-item">
+      <a class="site-drawer__link" href="/">Home</a>
+    </li>
+    {{ range .Site.Menus.main }}
+    <li class="site-drawer__list-item">
+      <a class="site-drawer__link" href="{{ .URL }}">{{ .Name }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</div>
