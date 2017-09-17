@@ -40,8 +40,8 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Title, name: page_title, widget: "string" }
           - { label: Intro, name: page_intro, widget: "text" }
 
-  - name: authors
-    label: Authors
+  - name: "authors"
+    label: "Authors"
     folder: "site/data/authors"
     create: true
     fields:
