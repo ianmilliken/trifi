@@ -1,10 +1,12 @@
 ---
-title: 'What to do in Shanghai: 4 Days'
-date: 2017-06-27T11:30:00Z
-city: Shanghai
-country: China
 authors:
   - Clare
+city: Shanghai
+country: China
+date: 2017-06-27T11:30:00.000Z
+draft: false
+title: 'What to do in Shanghai: 4 Days'
+location: Shanghai
 tags:
   - china
   - stories
@@ -12,7 +14,6 @@ teaser: >-
   Our 4 day jam-packed itinerary for Shanghai. Where we stayed and what we
   recommend if you're planning a visit
 image: /img/Shanghai_Itinerary.jpg
-draft: false
 ---
 Shanghai was probably the best place to start our 10-stop China expedition, since the huge city gave us so much to see and do. It was quite easy to get around on the metro and you’d still be okay with basic mandarin. We loved the noisy, colourful modern streets and the light-filled night skies. Shanghai didn’t disappoint on the more traditional sights either - we found lots of relaxing green spaces with ornamental buildings and caught a glimpse of its fascinating history.
 
@@ -115,3 +116,4 @@ When we got off at the station we had no idea where to go, and only had a screen
 * Disneyland!
 
 You can [see the rest of Shanghai snapshots here](https://twonewnatives.com/snapshots/bundling-into-shanghai).
+
