@@ -25,14 +25,14 @@
           <div class="article-item__summary">{{ .Params.teaser }}</div>
           <div class="article-item__meta">
 
-            {{ if .Params.authors }}
+            {{ if .Params.author }}
             <div class="article-item__author">
-              {{ if eq .Params.authors "Ian" }}
-              <img class="article-item__author__image" src="/img/ian.jpg" alt="{{ .Params.authors }}"/>
+              {{ if eq .Params.author "Ian" }}
+              <img class="article-item__author__image" src="/img/ian.jpg" alt="{{ .Params.author }}"/>
               {{ else }}
-              <img class="article-item__author__image" src="/img/clare.jpg" alt="{{ .Params.authors }}"/>
+              <img class="article-item__author__image" src="/img/clare.jpg" alt="{{ .Params.author }}"/>
               {{ end }}
-              <div class="article-item__author__name"><span>{{ .Params.authors }}</span></div>
+              <div class="article-item__author__name"><span>{{ .Params.author }}</span></div>
             </div>
             {{ end }}
 
