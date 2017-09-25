@@ -1,7 +1,6 @@
 ---
 title: 'That Time an Army Came, Saw and Conquered'
 date: 2017-09-09T06:40:29.188Z
-authors: Clare
 city: Guilin
 country: China
 teaser: 'When things don''t go according to plan, you may be left fearing for your life.'

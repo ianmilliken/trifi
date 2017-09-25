@@ -1,5 +1,4 @@
 ---
-authors: Clare
 city: Shanghai
 country: China
 title: Shanghai

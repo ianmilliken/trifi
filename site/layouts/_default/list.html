@@ -25,6 +25,7 @@
           <div class="article-item__summary">{{ .Params.teaser }}</div>
           <div class="article-item__meta">
 
+            {{ if .Params.authors }}
             <div class="article-item__author">
               {{ if eq .Params.authors "Ian" }}
               <img class="article-item__author__image" src="/img/ian.jpg" alt="{{ .Params.authors }}"/>
@@ -33,6 +34,7 @@
               {{ end }}
               <div class="article-item__author__name"><span>{{ .Params.authors }}</span></div>
             </div>
+            {{ end }}
 
             <div class="u-group--unstyled">
               <div class="article-item__date">

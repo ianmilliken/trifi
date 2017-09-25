@@ -1,5 +1,4 @@
 ---
-authors: Ian
 city: Yichang
 country: China
 date: 2017-01-23T09:30:00.000Z
