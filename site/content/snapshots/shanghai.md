@@ -1,17 +1,18 @@
 ---
-city: Shanghai
-country: China
 title: Shanghai
 date: 2016-09-16T15:04:10.000Z
-tags:
-  - China
-  - Shanghai
+author: Clare
 teaser: >-
   Our first destination was the big and bustling city of Shanghai, characterized
   by its electric skyline and stylish streets. However we did find pockets of
   more traditional Chinese culture tucked away in the metropolis - there's more
   to Shanghai than meets the eye!
+city: Shanghai
+country: China
 image: /img/shanghai-0721.jpg
+tags:
+  - China
+  - Shanghai
 ---
 
 {{< 500px
@@ -252,3 +253,4 @@ It was a rainy dreary day and we took a long and dreary day trip to Qingbao. It 
   link="https://500px.com/photo/180638035/qingbao-street-food-market-by-two-new-natives" >}}
 One of the stalls we past in Qingbao, selling types of meat we couldn't recognise let alone pronounce. This time we didn't try our luck with any of the unfamiliar goods the stalls had to offer.
 {{</ 500px >}}
+
