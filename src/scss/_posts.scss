@@ -74,6 +74,12 @@
         margin-top: 4rem;
       }
 
+      & img {
+        width: calc(100% + 4rem);
+        margin-left: -2rem;
+        margin-right: -2rem;
+      }
+
       & blockquote {
         position: relative;
         padding: 1rem 2rem;
@@ -169,6 +175,12 @@
         & h2 + p,
         & h3 + p {
           margin-top: 2rem;
+        }
+
+        & img {
+          width: calc(100% + 4rem);
+          margin-left: -2rem;
+          margin-right: -2rem;
         }
 
         & blockquote {
