@@ -1,12 +1,13 @@
 ---
+date: 2017-06-27T11:30:00.000Z
+author: Clare
 city: Shanghai
 country: China
-date: 2017-06-27T11:30:00.000Z
 draft: false
-title: 'What to do in Shanghai: 4 Days'
 tags:
   - china
   - stories
+title: 'What to do in Shanghai: 4 Days'
 teaser: >-
   Our 4 day jam-packed itinerary for Shanghai. Where we stayed and what we
   recommend if you're planning a visit
@@ -113,3 +114,4 @@ When we got off at the station we had no idea where to go, and only had a screen
 * Disneyland!
 
 You can [see the rest of Shanghai snapshots here](https://twonewnatives.com/snapshots/bundling-into-shanghai).
+
