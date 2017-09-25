@@ -1,12 +1,13 @@
 ---
+date: 2017-01-23T09:30:00.000Z
+author: Ian
 city: Yichang
 country: China
-date: 2017-01-23T09:30:00.000Z
 draft: false
-title: The 'Bu Yao Xie Xie' Incident
 tags:
   - china
   - stories
+title: The 'Bu Yao Xie Xie' Incident
 teaser: >-
   Never mess with a girl who didn't get a good breakfast in her and has been on
   the edge for a few days.
@@ -53,3 +54,4 @@ I’m quite glad we were hassled to be honest, the rest of our day was filled wi
 Travelling for any prolonged amount of time is full of fun and unexpected delights, but it also has its stresses. If you don’t take enough time off from your time off (which I know might sound stupid), those stresses can boil up and turn even the chirpiest of people into a ticking time bomb. However, you can’t always do something about that, so if you feel like you’re going to blow your lid, don’t do it on your travel buddy.
 
 Without thinking too much about it though, there is one very obvious lesson – when a woman expects some mango for breakfast, for god’s sake, do not give her pizza.
+
