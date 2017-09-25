@@ -3,8 +3,7 @@ title: 'That Time an Army Came, Saw and Conquered'
 date: 2017-09-09T06:40:29.188Z
 authors:
   - Clare
-city: Guilin
-country: China
+location: Guilin
 teaser: 'When things don''t go according to plan, you may be left fearing for your life.'
 image: /img/guilin-0529.jpg
 ---
@@ -18,15 +17,13 @@ Unknowing of this outcome we set off in high spirits, not deterred by our rusty,
 
 ## “How the hell do we get in?”
 
-There were no pavements to help us now. And as we’d already seen, people drive pretty much how they want to on these roads. So we stuck to the curb side like magnets and looked like startled rabbits every time we heard the approach of a vehicle. But thankfully after a few minutes we realised that it was surprisingly less stressful to ride on these roads than on the roads back home. Unlike some self-righteous English drivers who speed whenever there aren’t cameras and aren’t too fond of cyclists, the many mopeds passing us
+There were no pavements to help us now. And as we’d already seen, people drive pretty much how they want to on these roads. So we stuck to the curbside like magnets and looked like startled rabbits every time we heard the approach of a vehicle. But thankfully after a few minutes, we realised that it was surprisingly less stressful to ride on these roads than on the roads back home. Unlike some self-righteous English drivers who speed whenever there aren’t cameras and aren’t too fond of cyclists, the many mopeds passing us kept a slow and steady pace. The cars stayed on the further side of the road and this arrangement suited us well. Maybe because road rules are more haphazard here people are more aware when they’re driving? Organised chaos is the term I’d use. So we merged into the flow of chaotic traffic and soon felt pretty comfortable on our flashy-trashy bikes.
 
-by kept a slow and steady pace. The cars stayed on the further side of the road and this arrangement suited us well. Maybe because road rules are  more haphazard here people are more aware when they’re driving? Organised chaos is the term I’d use. So we merged into the flow of chaotic traffic and soon felt pretty comfortable on our flashy-trashy bikes.
-
-On reaching the park on the map it was now our task to find the entrance, which we thought would be easy. A big park like this must have at least one easily accessible entrance right? Nope. In fact it probably took us over an hour of riding around the park’s circumference, and we still didn't manage to find the entrance. Whenever there seemed to be an entrance turning on the map it was some kind of gravelly car park or weird industrial stretch which our groovy bikes could barely handle. It was a bumpy ride.
+On reaching the park on the map it was now our task to find the entrance, which we thought would be easy. A big park like this must have at least one easily accessible entrance right? Nope. In fact, it probably took us over an hour of riding around the park’s circumference and we still didn't manage to find the entrance. Whenever there seemed to be an entrance turning on the map it was some kind of gravelly car park or weird industrial stretch which our groovy bikes could barely handle. It was a bumpy ride.
 
 We decided to cycle around the whole thing in the hope of finding it, but ended up going down high streets and into busy industrial sections. Riding about half of the way, Ian spotted a little turning right past our hotel, so we made for it and again ended up turning into a dead end. We gave up and decided to cycle around the beautiful lake in our complex instead.
 
-{{< 500px src="https://500px.com/photo/193037331/li-river-boat-by-two-new-natives?ctx_page=1&from=gallery&galleryPath=26064615&user_id=19709765" alt="undefined" href="undefined">}}How good is the view?{{</ 500px >}}
+![Guilin lake](/img/guilin-0505.jpg)
 
 ## Then they came along
 
@@ -36,7 +33,8 @@ Then he saw them.
 
 It was an army of shiny red ants crawling on his skin, inside his flip-flops and attacking his foot. He quickly tried to brush them away but they were resilient and sneaky little ants. It seemed like a very strategically well-planned attack. Being afar on my bike I only saw Ian flailing and swearing. Though this was quite funny, I thought I better ride to his aid and watched on in horror as the ants were smote down from his flip flops. Some clung on for dear life and attacked as a last act of vengeance, others abandoned ship. It was an insect bloodbath. Ian’s foot was covered in pink spots.
 
-{{< 500px src="https://500px.com/photo/193037301/post-ant-attack-by-two-new-natives?ctx_page=1&from=gallery&galleryPath=26064615&user_id=19709765" alt="ant attack Guilin" href="undefined">}}undefined{{</ 500px >}}
+![Chinese ants ](/img/guilin-0530.jpg)
+
 
 It appeared he had stepped on an ant nest whilst looking up at the wonderful things nature has to offer - lakes, rivers, plants and trees in the sunshine - and me on my bike. We moved away from the violent scene and looked down at his foot. Ian became panicked. Are ants poisonous here? We’d read something briefly about Chinese red ants being potentially dangerous and these now dead ants fit the bill.
 
@@ -45,7 +43,7 @@ Chinese red ‘fire’ ants are notorious for their aggression and can sting rep
 
 I honestly thought he was being a right wuss to begin with.* Come on mate, get on your bike *I was secretly thinking as he waved his foot about with panic. As our day had already been a fail thus far I wanted to have at least one scenic cycle for the day. Very sympathetic I know.
 
-{{< 500px src="https://500px.com/photo/193037329/just-cycle-through-some-poses-for-me-by-two-new-natives?ctx_page=1&from=gallery&galleryPath=26064615&user_id=19709765" alt="undefined" href="undefined">}}Still going strong{{</ 500px >}}
+![Guilin bike ride](/img/guilin-0525.jpg)
 
 
 So with my reassurance he soldiered on as we went round the lake and cycled down a narrowing weed-ridden path where we hit a block of steep steps. It was an ordeal getting our bikes through as we were faced by more and more narrow steps till we reached a calming waterfall. Worth it! However as we began to admire our natural surrounds we were pestered again to go on a bamboo raft by a woman who wouldn’t take no for an answer and followed us as we started to leave for home. [There was another “bu yao” altercation](/journal/the-bu-yao-xie-xie-incident/). We quickly cycled back - Ian probably in fear of dying that day and me in another bu yao xie xie rage.
@@ -53,4 +51,5 @@ So with my reassurance he soldiered on as we went round the lake and cycled down
 As you know he didn’t die, he was all good after a few hours...
 
 I think the day won us out overall but sometimes it’s good when things don’t go to plan. We got to laugh about the mishaps afterwards and we’ll definitely remember the day’s events and our time in Guilin as a result. Yay for travel fails!
+
 
