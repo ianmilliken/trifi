@@ -1,6 +1,7 @@
 ---
 title: 'That Time an Army Came, Saw and Conquered'
 date: 2017-09-09T06:40:29.188Z
+author: Clare
 city: Guilin
 country: China
 teaser: 'When things don''t go according to plan, you may be left fearing for your life.'
@@ -50,3 +51,4 @@ So with my reassurance he soldiered on as we went round the lake and cycled down
 As you know he didn’t die, he was all good after a few hours...
 
 I think the day won us out overall but sometimes it’s good when things don’t go to plan. We got to laugh about the mishaps afterwards and we’ll definitely remember the day’s events and our time in Guilin as a result. Yay for travel fails!
+
