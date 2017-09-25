@@ -1,6 +1,5 @@
 ---
-authors:
-  - Clare
+authors: Clare
 city: Beijing
 country: China
 date: 2017-01-15T08:30:00.000Z

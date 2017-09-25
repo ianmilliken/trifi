@@ -17,7 +17,12 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "authors", widget: "text" }
+      - name: author
+        label: Author
+        widget: relation
+        collection: authors
+        searchFields: [first_name, surname]
+        valueField: first_name
       - { label: City, name: city, widget: string }
       - { label: Country, name: country, widget: string }
       - { label: "Teaser", name: "teaser", widget: "text" }
@@ -37,7 +42,6 @@ collections: # A list of collections the CMS should be able to edit
         collection: authors
         searchFields: [first_name, surname]
         valueField: first_name
-      - { label: "Author", name: "authors", widget: "text" }
       - { label: "Teaser", name: "teaser", widget: "text" }
       - { label: City, name: city, widget: string }
       - { label: Country, name: country, widget: string }
@@ -63,8 +67,8 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "City", name: "city", widget: "string" }
       - { label: "Country", name: "country", widget: "string" }
 
-  - name: "authors"
-    label: "Authors"
+  - name: authors
+    label: Authors
     folder: "site/content/authors"
     create: true
     slug: "{{first_name}}-{{surname}}"

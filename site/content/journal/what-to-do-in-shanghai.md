@@ -1,6 +1,5 @@
 ---
-authors:
-  - Clare
+authors: Clare
 city: Shanghai
 country: China
 date: 2017-06-27T11:30:00.000Z

@@ -1,6 +1,5 @@
 ---
-authors:
-  - Clare
+authors: Clare
 city: Pingyao
 country: China
 title: Pingyao

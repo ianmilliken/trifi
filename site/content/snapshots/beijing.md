@@ -1,7 +1,6 @@
 ---
 author: clare
-authors:
-  - Clare
+authors: Clare
 city: Beijing
 country: China
 title: Beijing
