@@ -63,6 +63,17 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "City", name: "city", widget: "string" }
       - { label: "Country", name: "country", widget: "string" }
 
+  - name: "authors"
+    label: "Authors"
+    folder: "site/content/authors"
+    create: true
+    slug: "{{first_name}}-{{surname}}"
+    fields:
+      - { label: "First Name", name: "first_name", widget: "string" }
+      - { label: "Surname", name: "surname", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "text" }
+      - { label: "Avatar", name: "avatar", widget: "image" }
+
   - name: "settings"
     label: "Settings"
     files:
@@ -72,17 +83,3 @@ collections: # A list of collections the CMS should be able to edit
         description: "General app settings"
         fields:
           - { label: "App Title", name: "app_title", widget: "string" }
-
-      - name: "authors"
-        label: "Authors"
-        file: "site/data/authors.json"
-        description: "Author descriptions"
-        fields:
-          - name: author
-            label: Author
-            widget: list
-            fields:
-              - { label: "First Name", name: "first_name", widget: "string" }
-              - { label: "Surname", name: "surname", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "text" }
-              - { label: "Avatar", name: "avatar", widget: "image" }
