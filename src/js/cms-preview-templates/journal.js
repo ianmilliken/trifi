@@ -20,7 +20,7 @@ export default class JournalPreview extends React.Component {
             <div className="u-group">
               <div className="p-banner__location">
                 <i className="fa fa-map-marker"></i>
-                { widgetFor("location") }
+                &nbsp; { entry.getIn(["data", "city"])}, { entry.getIn(["data", "country"])}
               </div>
             </div>
             <h1 className="p-banner__title">
