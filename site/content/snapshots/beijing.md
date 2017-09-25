@@ -1,16 +1,17 @@
 ---
-city: Beijing
-country: China
 title: Beijing
 date: 2017-03-28T15:04:10.000Z
-tags:
-  - Beijing
-  - China
+author: Clare
 teaser: >-
   Beijing is a vast super-metropolis that we barely scratched the surface of.
   The streets burrow deep into the landscape and carve out a dynamic culture
   bustling with great food, fun people, and a million things to do...
+city: Beijing
+country: China
 image: /img/Beijing_Hutong.jpg
+tags:
+  - Beijing
+  - China
 ---
 {{< 500px src="https://drscdn.500px.org/photo/194091199/m%3D900/v2?user_id=19709765&webp=true&sig=ef6e60f7edc5f27f1eba07d656f81f3228433556c5c8b68a0f08934142ffd9bf" alt="Hutong Circus by Two New Natives on 500px.com" href="https://500px.com/photo/194091199/hutong-circus-by-two-new-natives">}}The Hutongs was one of our favourite districts to wander in Beijing. The ancient Hutong neighbourhood was filled with lively activity and friendly people.{{</ 500px >}}
 
@@ -261,3 +262,4 @@ alt="This dog is cooler than you by Two New Natives on 500px.com"
 link="https://500px.com/photo/194091253/this-dog-is-cooler-than-you-by-two-new-natives" >}}
 The coolest looking dawg we've ever seen, strolling casually down Beijing's streets.
 {{</ 500px >}}
+
