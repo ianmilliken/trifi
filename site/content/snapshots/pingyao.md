@@ -1,16 +1,17 @@
 ---
-city: Pingyao
-country: China
 title: Pingyao
 date: 2017-03-27T12:37:17.000Z
-tags:
-  - China
-  - Pingyao
+author: Clare
 teaser: >-
   We arrived expecting a small and quiet traditional town, but we met by a
   commercial tourist infested nightmare. It still had its merits, but China's
   economic boom really does appear to have swallowed up everywhere.
+city: Pingyao
+country: China
 image: /img/Pingyao.jpg
+tags:
+  - China
+  - Pingyao
 ---
 
 {{< 500px
@@ -91,3 +92,4 @@ Our resident dog at our hotel. The poor dog was chained up all day and didn't ha
   link="https://500px.com/photo/192001563/jazz-and-karaoke-by-two-new-natives" >}}
 There were quite a few karaoke spots and this one had a very committed woman belting out Chinese hits.
 {{</ 500px >}}
+
