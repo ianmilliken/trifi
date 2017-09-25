@@ -60,6 +60,7 @@ collections: # A list of collections the CMS should be able to edit
     label: Locations
     folder: "site/content/locations"
     create: true
+    slug: "{{country}}/{{city}}"
     fields:
       - { label: "City", name: "city", widget: "string" }
       - { label: "Country", name: "country", widget: "string" }
