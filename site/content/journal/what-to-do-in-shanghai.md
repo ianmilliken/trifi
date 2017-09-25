@@ -6,7 +6,6 @@ country: China
 date: 2017-06-27T11:30:00.000Z
 draft: false
 title: 'What to do in Shanghai: 4 Days'
-location: Shanghai
 tags:
   - china
   - stories
@@ -116,4 +115,3 @@ When we got off at the station we had no idea where to go, and only had a screen
 * Disneyland!
 
 You can [see the rest of Shanghai snapshots here](https://twonewnatives.com/snapshots/bundling-into-shanghai).
-

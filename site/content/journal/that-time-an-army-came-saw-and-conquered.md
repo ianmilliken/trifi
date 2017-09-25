@@ -3,7 +3,6 @@ title: 'That Time an Army Came, Saw and Conquered'
 date: 2017-09-09T06:40:29.188Z
 authors:
  - Clare
-location: Guilin
 teaser: 'When things don''t go according to plan, you may be left fearing for your life.'
 image: /img/guilin-0529.jpg
 ---
