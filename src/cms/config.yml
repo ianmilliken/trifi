@@ -3,6 +3,8 @@ backend:
   repo: <% GITHUB_REPOSITORY %> # Gulp will replace this with your GitHub repository
   branch: master # Branch to update (master by default)
 
+# publish_mode: editorial_workflow
+
 media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
@@ -16,7 +18,12 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "authors", widget: "text" }
-      - { label: "Location", name: "location", widget: "text" }
+      - name: location
+        label: Location
+        widget: relation
+        collection: locations
+        searchFields: [city, country]
+        valueField: city
       - { label: "Teaser", name: "teaser", widget: "text" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -49,6 +56,14 @@ collections: # A list of collections the CMS should be able to edit
           - { label: Title, name: page_title, widget: "string" }
           - { label: Intro, name: page_intro, widget: "text" }
 
+  - name: locations
+    label: Locations
+    folder: "site/content/locations"
+    create: true
+    fields:
+      - { label: "City", name: "city", widget: "string" }
+      - { label: "Country", name: "country", widget: "string" }
+
   - name: "settings"
     label: "Settings"
     files:
@@ -72,15 +87,3 @@ collections: # A list of collections the CMS should be able to edit
               - { label: "Surname", name: "surname", widget: "string" }
               - { label: "Bio", name: "bio", widget: "text" }
               - { label: "Avatar", name: "avatar", widget: "image" }
-
-      - name: locations
-        label: Locations
-        file: "site/data/locations.json"
-        description: "Location descriptions"
-        fields:
-          - name: location
-            label: Location
-            widget: list
-            fields:
-              - { label: "City", name: "city", widget: "string" }
-              - { label: "Country", name: "country", widget: "string" }
