@@ -2,7 +2,7 @@
 title: 'That Time an Army Came, Saw and Conquered'
 date: 2017-09-09T06:40:29.188Z
 authors:
- - Clare
+  - Clare
 location: Guilin
 teaser: 'When things don''t go according to plan, you may be left fearing for your life.'
 image: /img/guilin-0529.jpg
@@ -25,7 +25,7 @@ On reaching the park on the map it was now our task to find the entrance, which 
 
 We decided to cycle around the whole thing in the hope of finding it, but ended up going down high streets and into busy industrial sections. Riding about half of the way, Ian spotted a little turning right past our hotel, so we made for it and again ended up turning into a dead end. We gave up and decided to cycle around the beautiful lake in our complex instead.
 
-{{< 500px src="https://500px.com/photo/193037331/li-river-boat-by-two-new-natives?ctx_page=1&from=gallery&galleryPath=26064615&user_id=19709765" alt="Guilin lake" href="undefined">}}How good is the view along the lake?{{</ 500px >}}
+{{< 500px src="https://500px.com/photo/193037331/li-river-boat-by-two-new-natives?ctx_page=1&from=gallery&galleryPath=26064615&user_id=19709765" alt="undefined" href="undefined">}}How good is the view?{{</ 500px >}}
 
 ## Then they came along
 
@@ -52,3 +52,4 @@ So with my reassurance he soldiered on as we went round the lake and cycled down
 As you know he didn’t die, he was all good after a few hours...
 
 I think the day won us out overall but sometimes it’s good when things don’t go to plan. We got to laugh about the mishaps afterwards and we’ll definitely remember the day’s events and our time in Guilin as a result. Yay for travel fails!
+
