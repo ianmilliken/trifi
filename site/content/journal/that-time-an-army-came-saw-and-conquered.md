@@ -24,7 +24,7 @@ On reaching the park on the map it was now our task to find the entrance, which 
 
 We decided to cycle around the whole thing in the hope of finding it, but ended up going down high streets and into busy industrial sections. Riding about half of the way, Ian spotted a little turning right past our hotel, so we made for it and again ended up turning into a dead end. We gave up and decided to cycle around the beautiful lake in our complex instead.
 
-{{< 500px src="https://500px.com/photo/193037331/li-river-boat-by-two-new-natives?ctx_page=1&from=gallery&galleryPath=26064615&user_id=19709765" alt="Guilin lake" href="undefined">}}How good is the view along the lake?{{</ 500px >}}
+{{< 500px src="https://500px.com/photo/193037331/li-river-boat-by-two-new-natives?ctx_page=1&from=gallery&galleryPath=26064615&user_id=19709765" alt="undefined" href="undefined">}}How good is the view?{{</ 500px >}}
 
 ## Then they came along
 
