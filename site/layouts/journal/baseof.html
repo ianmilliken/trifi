@@ -9,6 +9,8 @@
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,400i,600,700,800|Yellowtail">
     <link rel="stylesheet" href="/css/app.css" as="style" />
+		<!-- Favicons -->
+		{{ partial "favicons" . }}
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85099537-1"></script>
     <script>
