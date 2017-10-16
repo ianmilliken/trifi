@@ -2,8 +2,6 @@ baseurl: "/"
 languageCode: "en-us"
 title: "Two New Natives"
 
-disqusShortname: "twonewnatives"
-
 menu:
   main:
     - Name: "Journal"
