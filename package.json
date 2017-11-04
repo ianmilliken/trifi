@@ -1,5 +1,5 @@
 {
-  "name": "victor-hugo",
+  "name": "twonewnatives",
   "version": "1.0.0",
   "description": "Victor Hugo is a Hugo boilerplate for creating truly epic websites!",
   "main": "index.js",
@@ -38,6 +38,8 @@
     "gulp-postcss": "^6.1.1",
     "gulp-replace": "^0.5.4",
     "gulp-util": "^3.0.7",
+    "history": "^4.7.2",
+    "historyjs": "^1.8.0-b2",
     "imports-loader": "^0.6.5",
     "netlify-cms": "^0.4.0",
     "postcss-cssnext": "^2.7.0",
@@ -56,5 +58,13 @@
     "gulp-svgstore": "^6.1.0",
     "susy": "^3.0.0",
     "svg-sprite-loader": "^0.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianmilliken/trifi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ianmilliken/trifi/issues"
+  },
+  "homepage": "https://github.com/ianmilliken/trifi#readme"
 }
