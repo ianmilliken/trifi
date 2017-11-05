@@ -9,8 +9,6 @@ console.log('----------------------------------------');
 
 SiteDrawer();
 
-var el = $('#fivehundred');
-
 /*axios.get('https://api.500px.com/v1/photos', {
     params: {
       feature: "user",
@@ -28,7 +26,7 @@ var el = $('#fivehundred');
     console.log(error);
   });*/
 
-  const user_id = "19709765",
+  /*const user_id = "19709765",
         el = document.getElementById('gallery'),
         gallery_id = el.dataset.galleryId;
   let photos = [];
@@ -49,9 +47,9 @@ axios.get('https://api.500px.com/v1/users/' + user_id + '/galleries/' + gallery_
         <img src="' + self.image_url + '" />
       </div>
     )
-    el.append(photos);
+    //el.append(photos);
   }
 })
 .catch(function (error) {
   console.log(error);
-});
+});*/

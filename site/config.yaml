@@ -1,6 +1,7 @@
 baseurl: "/"
 languageCode: "en-us"
 title: "Two New Natives"
+relativeURLs: true
 
 menu:
   main:
