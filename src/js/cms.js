@@ -9,7 +9,7 @@ import GalleriesPreview from "./cms-preview-templates/galleries";
 CMS.registerPreviewStyle("/css/app.css");
 CMS.registerPreviewTemplate("journal", JournalPreview);
 CMS.registerPreviewTemplate("snapshots", SnapshotsPreview);
-CMS.registerPreviewTemplate("snapshots", GalleriesPreview);
+CMS.registerPreviewTemplate("galleries", GalleriesPreview);
 
 CMS.registerEditorComponent({
       id: "youtube",

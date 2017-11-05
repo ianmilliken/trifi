@@ -29,23 +29,29 @@ var el = $('#fivehundred');
   });*/
 
   const user_id = "19709765",
-        gallery_id = "cedar-creek";
+        el = document.getElementById('gallery'),
+        gallery_id = el.dataset.galleryId;
+  let photos = [];
 
-/* axios.get('https://api.500px.com/v1/users/' + user_id + '/galleries/' + gallery_id + '/items', {
-      params: {
-        //user_id: "19709765",
-        //gallery_id: "cedar-creek",
-        image_size: 4,
-        consumer_key: "RgAZO3RwsFWdy1eNCnwiC5JaSBxTFypd3cvVbVMl"
-      }
-    })
-    .then(function (response) {
-      console.log(response);
-      for (var photo in response.data.photos) {
-        el.append('<img src="' + response.data.photos[photo].image_url + '" />');
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-*/
+axios.get('https://api.500px.com/v1/users/' + user_id + '/galleries/' + gallery_id + '/items', {
+  params: {
+    image_size: 4,
+    consumer_key: "RgAZO3RwsFWdy1eNCnwiC5JaSBxTFypd3cvVbVMl"
+  }
+})
+.then(function (response) {
+  console.log(response);
+  for (let photo in response.data.photos) {
+    let self = response.data.photos[photo];
+    //el.append('<img src="' + response.data.photos[photo].image_url + '" />');
+    photos.push(
+      <div>
+        <img src="' + self.image_url + '" />
+      </div>
+    )
+    el.append(photos);
+  }
+})
+.catch(function (error) {
+  console.log(error);
+});
