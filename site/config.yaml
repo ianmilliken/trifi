@@ -13,6 +13,9 @@ menu:
     - Name: "About Us"
       URL: "/about/"
       weight: 3
+    - Name: "Galleries"
+      URL: "/galleries/"
+      weight: 4
 
   footer:
     - Name: "Journal"

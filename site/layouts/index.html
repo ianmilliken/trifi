@@ -2,6 +2,8 @@
 
 {{ $baseURL := .Site.BaseURL }}
 
+<div id="fivehundred"></div>
+
 {{ range first 1 (where .Data.Pages.ByDate.Reverse "Section" "journal") }}
 <div class="p-banner">
   <div class="container u-center-group">

@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: <% GITHUB_REPOSITORY %> # Gulp will replace this with your GitHub repository
-  branch: master # Branch to update (master by default)
+  branch: im-snapshots # Branch to update (master by default)
 
 # publish_mode: editorial_workflow
 
@@ -47,6 +47,14 @@ collections: # A list of collections the CMS should be able to edit
       - { label: Country, name: country, widget: string }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: 'galleries'
+    label: 'Galleries'
+    folder: 'site/content/galleries'
+    create: true
+    fields:
+      - { name: 'title', label: 'Title', widget: 'text' }
+      - { name: 'gallery_id', label: 'Gallery ID', widget: 'text' }
 
   - name: "pages"
     label: "Pages"
