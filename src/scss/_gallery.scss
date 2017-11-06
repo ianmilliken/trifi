@@ -1,0 +1,60 @@
+@include bp-x-small {
+
+	.gallery {
+		background-color: $black;
+		height: 100vh;
+		&__item {
+			display: flex;
+			align-items: center;
+			height: 100%;
+		}
+		&__image {
+			width: 100%;
+			object-fit: contain;
+		}
+		&__title {
+			color: $white;
+		}
+		&__button {
+			width: 50%;
+			padding: 1rem 2rem;
+			border: 0.1rem solid $white;
+			text-transform: uppercase;
+			background-color: transparent;
+			color: $white;
+			appearance: none;
+			cursor: pointer;
+		}
+	}
+
+	.photo {
+		&__panel {
+			width: 70%;
+			padding-left: 4rem;
+		}
+		&__title {
+			margin-bottom: 1.6rem;
+			color: $white;
+		}
+		&__description {
+			color: $white;
+		}
+	}
+
+	.info__panel {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 30%;
+		height: 70vh;
+		padding: 4rem;
+	}
+}
+
+@include bp-medium {
+
+}
+
+@include bp-large {
+
+}

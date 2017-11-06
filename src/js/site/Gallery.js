@@ -10,9 +10,11 @@ export default function Gallery() {
 
 	const GalleryDOM = document.getElementById('gallery'),
 				GalleryID = GalleryDOM.dataset.galleryId,
+				PageTitle = document.getElementById('page-title'),
 				UserID = '19709765',
 				ConsumerKey = 'RgAZO3RwsFWdy1eNCnwiC5JaSBxTFypd3cvVbVMl';
 
+	PageTitle.remove();
 
 	class GalleryContainer extends React.Component {
 		constructor(props) {
@@ -30,16 +32,16 @@ export default function Gallery() {
 			const parent = this;
 			axios.get('https://api.500px.com/v1/users/' + UserID + '/galleries/' + GalleryID + '/items', {
 				params: {
-					image_size: 4,
+					image_size: 1600,
 					consumer_key: ConsumerKey
 				}
 			})
 			.then(function (response) {
-				console.log(response);
+				//console.log(response);
 				for (let photo in response.data.photos) {
-					console.log(response.data.photos[photo]);
+					//console.log(response.data.photos[photo]);
 					let self = response.data.photos[photo],
-							instance = <GalleryItem id={self.id} imageURL={self.image_url} />,
+							instance = <GalleryItem id={self.id} self={self} handlePreviousClick={parent.handlePreviousClick} handleNextClick={parent.handleNextClick} />,
 							newState = parent.state.photos.concat(instance);
 					parent.setState({
 						photos: newState,
@@ -59,7 +61,7 @@ export default function Gallery() {
 		}
 
 		handleNextClick(direction) {
-			console.log(direction);
+			//console.log(direction);
 			var photos = this.state.photos,
 					last_photo = photos.length - 1,
 					current_photo = photos.findIndex(this.findPhoto),
@@ -76,7 +78,7 @@ export default function Gallery() {
 		}
 
 		handlePreviousClick(direction) {
-			console.log(direction);
+			//console.log(direction);
 			var photos = this.state.photos,
 					last_photo = photos.length - 1,
 					current_photo = photos.findIndex(this.findPhoto),
@@ -105,8 +107,6 @@ export default function Gallery() {
 	  render() {
 	    return (
 	      <div className="gallery-container">
-					<Button text="Previous" action={this.handlePreviousClick} />
-					<Button text="Next" action={this.handleNextClick} />
 					<Gallery photos={this.state.photos} activePhoto={this.state.activePhoto} />
 				</div>
 	    );
@@ -121,7 +121,7 @@ export default function Gallery() {
 
 		render() {
 			return (
-				<ul>{this.props.activePhoto}</ul>
+				<ul className="gallery">{this.props.activePhoto}</ul>
 			);
 		}
 	}
@@ -134,8 +134,21 @@ export default function Gallery() {
 
 	  render() {
 	    return (
-	      <li>
-	        <img src={this.props.imageURL} />
+	      <li className="gallery__item">
+					<div className="info__panel">
+						<h1 className="gallery__title">{PageTitle.dataset.title}</h1>
+						<div className="info__panel__inner">
+							<h2 className="photo__title">{this.props.self.name}</h2>
+							<p className="photo__description">{this.props.self.description}</p>
+						</div>
+						<div className="gallery__controls">
+							<Button text="Previous" action={this.props.handlePreviousClick} />
+							<Button text="Next" action={this.props.handleNextClick} />
+						</div>
+					</div>
+	        <div className="photo__panel">
+						<img className="gallery__image" src={this.props.self.image_url} alt={this.props.self.name} title={this.props.self.name} />
+					</div>
 	      </li>
 	    );
 	  }
@@ -154,7 +167,7 @@ export default function Gallery() {
 
 		render() {
 			return (
-				<button onClick={this.handleClick}>{this.props.text}</button>
+				<button className="gallery__button" onClick={this.handleClick}>{this.props.text}</button>
 			);
 		}
 	}
