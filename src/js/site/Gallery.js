@@ -39,7 +39,7 @@ export default function Gallery() {
 			.then(function (response) {
 				//console.log(response);
 				for (let photo in response.data.photos) {
-					//console.log(response.data.photos[photo]);
+					console.log(response.data.photos[photo]);
 					let self = response.data.photos[photo],
 							instance = <GalleryItem id={self.id} self={self} handlePreviousClick={parent.handlePreviousClick} handleNextClick={parent.handleNextClick} />,
 							newState = parent.state.photos.concat(instance);
@@ -140,6 +140,10 @@ export default function Gallery() {
 						<div className="info__panel__inner">
 							<h2 className="photo__title">{this.props.self.name}</h2>
 							<p className="photo__description">{this.props.self.description}</p>
+							<div className="photo__details">
+								<p>Taken: {this.props.self.created_at}</p>
+								<p>Location: {this.props.self.location}</p>
+							</div>
 						</div>
 						<div className="gallery__controls">
 							<Button text="Previous" action={this.props.handlePreviousClick} />
