@@ -1,0 +1,47 @@
+{{ define "navigation" }}
+  {{ partial "nav" . }}
+{{ end }}
+
+{{ define "main" }}
+
+{{ $baseURL := .Site.BaseURL }}
+
+<div class="container u-spacer u-after-site-nav">
+  <header class="listings-header">
+    <h1 class="listings-header__title">{{ .Params.page_title }}</h1>
+    <p class="listings-header__intro">{{ .Params.page_intro }}</p>
+  </header>
+</div>
+
+<section class="listings-body">
+  {{ if .Data.Pages }}
+  <ul class="article-list">
+    {{ range .Data.Pages.ByDate.Reverse }}
+    <li class="article-item">
+      <a class="article-item__link" href="{{ .Permalink }}">
+        <img class="article-item__thumbnail" src="{{ .Params.image }}" alt="{{ .Title }}"/>
+        <div class="article-item__body">
+          <div class="article-item__title">{{ .Title }}</div>
+
+          <div class="article-item__meta">
+
+            {{ if .Params.author }}
+            <div class="article-item__author">
+              {{ if eq .Params.author "Ian" }}
+              <img class="article-item__author__image" src="/img/ian.jpg" alt="{{ .Params.author }}"/>
+              {{ else }}
+              <img class="article-item__author__image" src="/img/clare.jpg" alt="{{ .Params.author }}"/>
+              {{ end }}
+              <div class="article-item__author__name"><span>{{ .Params.author }}</span></div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</section>
+
+{{ end }}

@@ -6,13 +6,13 @@
     width: 100%;
     z-index: 5;
 
-    & .flexbox {
+    /*& .flexbox {
       border-bottom: 0.1rem solid $grey;
     }
 
     & .flexbox--light {
       border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
-    }
+    }*/
 
     &__logo {
       display: block;
@@ -24,7 +24,7 @@
       padding: 1rem 0;
 
       & svg {
-        height: 4.8rem;
+        height: 3.5rem;
         width: auto;
         fill: $secondary_color;
       }
@@ -37,15 +37,14 @@
     }
 
     &__list {
-      line-height: 11rem;
+      line-height: 7rem;
     }
 
     &__link {
       display: block;
       color: $secondary_color;
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      font-weight: 700;
+      font-size: 1.3rem;
+      font-weight: 500;
       letter-spacing: 0.03rem;
 
       &:hover {
@@ -125,7 +124,7 @@
       padding: 0;
 
       & svg {
-        height: 6.4rem;
+        height: 3.5rem;
       }
     }
   }

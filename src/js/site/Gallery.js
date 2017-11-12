@@ -10,11 +10,8 @@ export default function Gallery() {
 
 	const GalleryDOM = document.getElementById('gallery'),
 				GalleryID = GalleryDOM.dataset.galleryId,
-				PageTitle = document.getElementById('page-title'),
 				UserID = '19709765',
-				ConsumerKey = 'RgAZO3RwsFWdy1eNCnwiC5JaSBxTFypd3cvVbVMl';
-
-	PageTitle.remove();
+				ConsumerKey = 'QbKVMdZ4ltpPI7jfFXbaQ4uuMUglNmZGBjPwPCYk';
 
 	class GalleryContainer extends React.Component {
 		constructor(props) {
@@ -37,11 +34,11 @@ export default function Gallery() {
 				}
 			})
 			.then(function (response) {
-				//console.log(response);
+				console.log(response);
 				for (let photo in response.data.photos) {
 					console.log(response.data.photos[photo]);
 					let self = response.data.photos[photo],
-							instance = <GalleryItem id={self.id} self={self} handlePreviousClick={parent.handlePreviousClick} handleNextClick={parent.handleNextClick} />,
+							instance = <GalleryItem id={self.id} self={self} handlePreviousClick={parent.handlePreviousClick} handleNextClick={parent.handleNextClick} photos={parent.state.photos} />,
 							newState = parent.state.photos.concat(instance);
 					parent.setState({
 						photos: newState,
@@ -136,7 +133,6 @@ export default function Gallery() {
 	    return (
 	      <li className="gallery__item">
 					<div className="info__panel">
-						<h1 className="gallery__title">{PageTitle.dataset.title}</h1>
 						<div className="info__panel__inner">
 							<h2 className="photo__title">{this.props.self.name}</h2>
 							<p className="photo__description">{this.props.self.description}</p>

@@ -8,4 +8,7 @@ console.log('App has loaded');
 console.log('----------------------------------------');
 
 SiteDrawer();
-Gallery();
+
+if (document.getElementById('gallery')) {
+	Gallery();
+}

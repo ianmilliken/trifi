@@ -1,8 +1,24 @@
 @include bp-x-small {
 
 	.gallery {
-		background-color: $black;
 		height: 100vh;
+		&-content {
+			background-color: #16161D;
+			&::before {
+				content: attr(data-title);
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				font-size: 30rem;
+				font-weight: 600;
+				line-height: 100vh;
+				text-align: center;
+				color: transparentize(#2E3148, 0.7);
+			}
+		}
 		&__item {
 			display: flex;
 			align-items: center;
@@ -14,6 +30,28 @@
 		}
 		&__title {
 			color: $white;
+			font-size: 4.6rem;
+			font-weight: 700;
+			margin-top: 2rem !important;
+			& > span {
+				position: relative;
+				padding-left: 2.6rem;
+				padding-right: 2.6rem;
+				background-color: #16161D;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				width: 100vw;
+				height: 0.1rem;
+				margin-top: auto;
+				margin-bottom: auto;
+				background-color: #2E3148;
+			}
 		}
 		&__button {
 			width: 50%;

@@ -1,15 +1,15 @@
 {{ define "navigation" }}
-  {{ partial "nav" . }}
+  {{ partial "nav_dark" . }}
 {{ end }}
 
 {{ define "main" }}
 
 {{ $baseURL := .Site.BaseURL }}
 
-<article class="content">
-  <header class="container">
+<article class="content gallery-content" data-title="{{ .Title }}">
+  <header class="container container--full">
     <div class="content-narrow u-center">
-      <h1 id="page-title" data-title="{{ .Title }}">{{ .Title }}</h1>
+      <h1 id="page-title" class="gallery__title"><span>{{ .Title }}</span></h1>
     </div>
   </header>
   <section class="container">
