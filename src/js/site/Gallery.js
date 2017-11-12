@@ -18,7 +18,9 @@ export default function Gallery() {
 			super(props);
 			this.state = {
 				photos: [],
-				activePhoto: []
+				activePhoto: undefined,
+				previousPhoto: undefined,
+				nextPhoto: undefined,
 			}
 			this.handleNextClick = this.handleNextClick.bind(this);
 			this.handlePreviousClick = this.handlePreviousClick.bind(this);
@@ -36,13 +38,14 @@ export default function Gallery() {
 			.then(function (response) {
 				console.log(response);
 				for (let photo in response.data.photos) {
-					console.log(response.data.photos[photo]);
+					//console.log(response.data.photos[photo]);
 					let self = response.data.photos[photo],
-							instance = <GalleryItem id={self.id} self={self} handlePreviousClick={parent.handlePreviousClick} handleNextClick={parent.handleNextClick} photos={parent.state.photos} />,
-							newState = parent.state.photos.concat(instance);
+							//instance = <GalleryItem id={self.id} self={self} handlePreviousClick={parent.handlePreviousClick} handleNextClick={parent.handleNextClick} photos={parent.state.photos} />,
+							newState = parent.state.photos.concat(self);
 					parent.setState({
 						photos: newState,
-						activePhoto: newState[0]
+						activePhoto: newState[0],
+						nextPhoto: newState[1]
 					});
 				}
 			})
@@ -54,7 +57,7 @@ export default function Gallery() {
 		findPhoto(photo) {
 			// React symbol is provided as an argument
 			// So we have to access it's ID through props
-			return photo.props.id === this.state.activePhoto.props.id;
+			return photo.id === this.state.activePhoto.id;
 		}
 
 		handleNextClick(direction) {
@@ -65,13 +68,20 @@ export default function Gallery() {
 					next_photo = current_photo + 1,
 					next_photo_object;
 
-			if (next_photo <= last_photo) {
+			var currentDOM = document.querySelector('.is-current');
+			var nextDOM = document.querySelector('.is-next');
+			currentDOM.classList.add('is-previous');
+			currentDOM.classList.remove('is-current');
+			nextDOM.classList.add('is-current');
+			nextDOM.classList.remove('is-next');
+
+			/*if (next_photo <= last_photo) {
 				next_photo_object = photos[next_photo];
 			} else {
 				next_photo_object = photos[0];
 			}
 
-			this.updateActivePhoto(next_photo_object);
+			this.updateActivePhoto(next_photo_object);*/
 		}
 
 		handlePreviousClick(direction) {
@@ -82,13 +92,20 @@ export default function Gallery() {
 					previous_photo = current_photo - 1,
 					previous_photo_object;
 
-			if (previous_photo >= 0) {
+			var currentDOM = document.querySelector('.is-current');
+			var previousDOM = document.querySelector('.is-previous');
+			currentDOM.classList.add('is-next');
+			currentDOM.classList.remove('is-current');
+			previousDOM.classList.add('is-current');
+			previousDOM.classList.remove('is-previous');
+
+			/*if (previous_photo >= 0) {
 				previous_photo_object = photos[previous_photo];
 			} else {
 				previous_photo_object = photos[last_photo];
 			}
 
-			this.updateActivePhoto(previous_photo_object);
+			this.updateActivePhoto(previous_photo_object);*/
 		}
 
 		updateActivePhoto(photo) {
@@ -101,10 +118,51 @@ export default function Gallery() {
 	    this.fetchGallery();
 	  }
 
+		renderPhotos() {
+			var collection = [];
+			for (let i in this.state.photos) {
+				let self = this.state.photos[i];
+				console.log(self);
+				collection.push(
+					<li key={i} className="gallery__item"><img src={self.image_url} alt={self.name} title={self.name} /></li>
+				);
+			}
+			return collection;
+		}
+
+		renderCurrentPhoto() {
+			return (
+				<li className="gallery__item is-current"><img className="gallery__image" src={this.state.activePhoto.image_url} alt={this.state.activePhoto.name} title={this.state.activePhoto.name} /></li>
+			);
+		}
+
+		renderPreviousPhoto() {
+			return (
+				<li className="gallery__item is-previous"><img className="gallery__image" src={this.state.previousPhoto.image_url} alt={this.state.previousPhoto.name} title={this.state.previousPhoto.name} /></li>
+			);
+		}
+
+		renderNextPhoto() {
+			return (
+				<li className="gallery__item is-next"><img className="gallery__image" src={this.state.nextPhoto.image_url} alt={this.state.nextPhoto.name} title={this.state.nextPhoto.name} /></li>
+			);
+		}
+
+
+
 	  render() {
 	    return (
 	      <div className="gallery-container">
-					<Gallery photos={this.state.photos} activePhoto={this.state.activePhoto} />
+					{/*<Gallery photos={this.state.photos} activePhoto={this.state.activePhoto} />*/}
+					<ul className="gallery__list">
+						{this.state.activePhoto !== undefined ? this.renderCurrentPhoto() : ''}
+						{this.state.previousPhoto !== undefined ? this.renderPreviousPhoto() : ''}
+						{this.state.nextPhoto !== undefined ? this.renderNextPhoto() : ''}
+					</ul>
+					<div className="gallery__controls">
+						<Button icon="chevron-left" action={this.handlePreviousClick} />
+						<Button icon="chevron-right" action={this.handleNextClick} />
+					</div>
 				</div>
 	    );
 	  }
@@ -131,25 +189,22 @@ export default function Gallery() {
 
 	  render() {
 	    return (
-	      <li className="gallery__item">
-					<div className="info__panel">
-						<div className="info__panel__inner">
-							<h2 className="photo__title">{this.props.self.name}</h2>
-							<p className="photo__description">{this.props.self.description}</p>
-							<div className="photo__details">
-								<p>Taken: {this.props.self.created_at}</p>
-								<p>Location: {this.props.self.location}</p>
+	      <div>
+					<li className="gallery__item">
+		        <div className="photo__panel">
+							<span className="gallery__image-holder"><img className="gallery__image" src={this.props.self.image_url} alt={this.props.self.name} title={this.props.self.name} /></span>
+						</div>
+						{/*
+							<div className="info__panel">
+								<div className="info__panel__inner">
+									<h2 className="photo__title">{this.props.self.name}</h2>
+									<p className="photo__description">{this.props.self.description}</p>
+								</div>
 							</div>
-						</div>
-						<div className="gallery__controls">
-							<Button text="Previous" action={this.props.handlePreviousClick} />
-							<Button text="Next" action={this.props.handleNextClick} />
-						</div>
-					</div>
-	        <div className="photo__panel">
-						<img className="gallery__image" src={this.props.self.image_url} alt={this.props.self.name} title={this.props.self.name} />
-					</div>
-	      </li>
+						*/}
+		      </li>
+
+				</div>
 	    );
 	  }
 	}
@@ -167,7 +222,7 @@ export default function Gallery() {
 
 		render() {
 			return (
-				<button className="gallery__button" onClick={this.handleClick}>{this.props.text}</button>
+				<button className="gallery__button" onClick={this.handleClick}><i className={"fa fa-" + this.props.icon}></i></button>
 			);
 		}
 	}

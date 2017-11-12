@@ -19,14 +19,56 @@
 				color: transparentize(#2E3148, 0.7);
 			}
 		}
+		&__list {
+			position: relative;
+			height: 60vh;
+			margin-top: 4rem;
+			overflow: hidden;
+		}
 		&__item {
-			display: flex;
-			align-items: center;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			width: 60%;
 			height: 100%;
+			margin: auto;
+			transform: translate3d(0, 0, 0);
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			&.is-previous,
+			&.is-next {
+				z-index: 0;
+				height: 80%;
+				transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				& .gallery__image {
+					mix-blend-mode: exclusion;
+					opacity: 0.35;
+					filter: grayscale(0.5);
+				}
+			}
+			&.is-previous {
+				transform: translate3d(-100%, 0, 0);
+			}
+			&.is-next {
+				transform: translate3d(100%, 0, 0);
+			}
+		}
+		&__image-holder {
+			position: relative;
+			display: block;
+			height: 44rem;
+			border-radius: 0.2rem;
+			box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
+			overflow: hidden;
 		}
 		&__image {
+			height: 100%;
 			width: 100%;
 			object-fit: contain;
+			object-position: center;
+			transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
 		}
 		&__title {
 			color: $white;
@@ -53,22 +95,39 @@
 				background-color: #2E3148;
 			}
 		}
+		&__controls {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			transform: translate3d(0, 50vh, 0);
+		}
 		&__button {
-			width: 50%;
+			position: absolute;
+			width: 5rem;
+			height: 5rem;
 			padding: 1rem 2rem;
-			border: 0.1rem solid $white;
+			border: 0.1rem solid #9497B2;
+			border-radius: 1.4rem;
 			text-transform: uppercase;
 			background-color: transparent;
-			color: $white;
+			color: #9497B2;
 			appearance: none;
 			cursor: pointer;
+			&:first-child {
+				left: 5rem;
+			}
+			&:last-child {
+				right: 5rem;
+			}
 		}
 	}
 
 	.photo {
 		&__panel {
-			width: 70%;
-			padding-left: 4rem;
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			margin-top: 4rem;
 		}
 		&__title {
 			margin-bottom: 1.6rem;
