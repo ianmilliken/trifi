@@ -21,6 +21,7 @@ export default function Gallery() {
 				activePhoto: undefined,
 				previousPhoto: undefined,
 				nextPhoto: undefined,
+				loading: true,
 			}
 			this.handleNextClick = this.handleNextClick.bind(this);
 			this.handlePreviousClick = this.handlePreviousClick.bind(this);
@@ -45,7 +46,8 @@ export default function Gallery() {
 					parent.setState({
 						photos: newState,
 						activePhoto: newState[0],
-						nextPhoto: newState[1]
+						nextPhoto: newState[1],
+						loading: false
 					});
 				}
 			})
@@ -131,20 +133,27 @@ export default function Gallery() {
 		}
 
 		renderCurrentPhoto() {
+			console.log('here we go!');
 			return (
-				<li className="gallery__item is-current"><img className="gallery__image" src={this.state.activePhoto.image_url} alt={this.state.activePhoto.name} title={this.state.activePhoto.name} /></li>
+				<li className="gallery__item is-current">
+					{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={this.state.activePhoto.image_url} alt={this.state.activePhoto.name} title={this.state.activePhoto.name} />}
+				</li>
 			);
 		}
 
 		renderPreviousPhoto() {
 			return (
-				<li className="gallery__item is-previous"><img className="gallery__image" src={this.state.previousPhoto.image_url} alt={this.state.previousPhoto.name} title={this.state.previousPhoto.name} /></li>
+				<li className="gallery__item is-previous">
+					{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={this.state.previousPhoto.image_url} alt={this.state.previousPhoto.name} title={this.state.previousPhoto.name} />}
+				</li>
 			);
 		}
 
 		renderNextPhoto() {
 			return (
-				<li className="gallery__item is-next"><img className="gallery__image" src={this.state.nextPhoto.image_url} alt={this.state.nextPhoto.name} title={this.state.nextPhoto.name} /></li>
+				<li className="gallery__item is-next">
+					{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={this.state.nextPhoto.image_url} alt={this.state.nextPhoto.name} title={this.state.nextPhoto.name} />}
+				</li>
 			);
 		}
 

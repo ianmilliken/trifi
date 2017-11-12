@@ -120,6 +120,16 @@
 				right: 5rem;
 			}
 		}
+		&__loader {
+			position: absolute;
+			top: 30%;
+			left: 0;
+			right: 0;
+			margin: auto;
+			font-size: 10rem;
+			text-align: center;
+			color: $white;
+		}
 	}
 
 	.photo {
