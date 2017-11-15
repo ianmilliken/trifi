@@ -8,15 +8,19 @@ menu:
     - Name: "Journal"
       URL: "/journal/"
       weight: 1
+      Identifier: "journal"
     - Name: "Snapshots"
       URL: "/snapshots/"
       weight: 2
+      Identifier: "snapshots"
     - Name: "About Us"
       URL: "/about/"
       weight: 3
+      Identifier: "about"
     - Name: "Galleries"
       URL: "/galleries/"
       weight: 4
+      identifier: "galleries"
 
   footer:
     - Name: "Journal"

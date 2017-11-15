@@ -15,7 +15,7 @@
 				{{ $currentNode := . }}
         {{ range .Site.Menus.main }}
 				<li class="site-nav__list-item">
-					<a class="site-nav__link site-nav__link--white {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}site-nav__link--active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
+					<a class="site-nav__link site-nav__link--white {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) (eq $currentNode.Section .Identifier) }}site-nav__link--active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
 				</li>
 				{{ end }}
 			</ul>
