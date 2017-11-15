@@ -3,12 +3,6 @@
   .site-footer {
 
     margin-top: 4rem;
-		&--dark {
-      margin-top: 0;
-      padding-top: 4rem;
-			padding-bottom: 1rem;
-      background-color: #16161D;
-		}
 
     &__logo {
 
@@ -38,21 +32,6 @@
 
       &:hover, &:hover > * {
         color: $secondary_color_hover;
-      }
-    }
-  }
-
-  .copyright {
-    font-family: $sans_font;
-    font-size: 1.2rem;
-    text-align: center;
-    color: $white;
-    & > a {
-      font-weight: 600;
-      color: #E84856;
-      &:hover {
-        color: darken(#E84856, 5%);
-        border-bottom: 0.1rem solid;
       }
     }
   }
