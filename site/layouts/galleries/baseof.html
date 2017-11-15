@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="text/html" http-equiv="Content-Type" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <!-- Blocks may include default content. -->
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,400i,600,700,800|Yellowtail">
+    <link rel="stylesheet" href="/css/app.css" as="style" />
+		<!-- Favicons -->
+		{{ partial "favicons" . }}
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85099537-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)};
+      gtag('js', new Date());
+      gtag('config', 'UA-85099537-1');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="body">
+      {{ partial "nav_dark" . }}
+      {{ block "main" . }}{{ end }}
+      {{ partial "footer_dark" . }}
+      <div class="site-overlay"></div>
+      {{ partial "site-drawer" . }}
+    </div>
+
+  </body>
+  <script type="text/javascript" src="/app.js"></script>
+</html>
