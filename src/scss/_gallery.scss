@@ -3,6 +3,7 @@
 	.gallery {
 		height: 100vh;
 		&-content {
+			height: calc(100vh - 7rem - 6.9rem);
 			background-color: #16161D;
 			&::before {
 				content: attr(data-title);
@@ -12,6 +13,7 @@
 				top: 0;
 				bottom: 0;
 				margin: auto;
+				overflow: hidden;
 				font-size: 30rem;
 				font-weight: 600;
 				line-height: 100vh;
@@ -53,6 +55,12 @@
 			}
 			&.is-next {
 				transform: translate3d(100%, 0, 0);
+			}
+			&.is-gone {
+				transform: translate3d(-200%, 0, 0);
+			}
+			&.is-upcoming {
+				transform: translate3d(200%, 0, 0);
 			}
 		}
 		&__image-holder {

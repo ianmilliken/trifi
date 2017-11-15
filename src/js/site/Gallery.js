@@ -57,8 +57,6 @@ export default function Gallery() {
 		}
 
 		findPhoto(photo) {
-			// React symbol is provided as an argument
-			// So we have to access it's ID through props
 			return photo.id === this.state.activePhoto.id;
 		}
 
@@ -126,7 +124,9 @@ export default function Gallery() {
 				let self = this.state.photos[i];
 				console.log(self);
 				collection.push(
-					<li key={i} className="gallery__item"><img src={self.image_url} alt={self.name} title={self.name} /></li>
+          <li key={i} className={"gallery__item" + (i == 0 ? " is-current" : "") + (i == this.state.photos.length - 1 ? " is-previous" : "") + (i == 1 ? " is-next" : "") + (i != 0 && i != 1 && i != this.state.photos.length - 1 ? " is-upcoming" : "")}>
+            {this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={self.image_url} alt={self.name} title={self.name} />}
+          </li>
 				);
 			}
 			return collection;
@@ -136,7 +136,7 @@ export default function Gallery() {
 			console.log('here we go!');
 			return (
 				<li className="gallery__item is-current">
-					{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={this.state.activePhoto.image_url} alt={this.state.activePhoto.name} title={this.state.activePhoto.name} />}
+					<img className="gallery__image" src={this.state.activePhoto.image_url} alt={this.state.activePhoto.name} title={this.state.activePhoto.name} />
 				</li>
 			);
 		}
@@ -162,57 +162,13 @@ export default function Gallery() {
 	  render() {
 	    return (
 	      <div className="gallery-container">
-					{/*<Gallery photos={this.state.photos} activePhoto={this.state.activePhoto} />*/}
 					<ul className="gallery__list">
-						{this.state.activePhoto !== undefined ? this.renderCurrentPhoto() : ''}
-						{this.state.previousPhoto !== undefined ? this.renderPreviousPhoto() : ''}
-						{this.state.nextPhoto !== undefined ? this.renderNextPhoto() : ''}
+						{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : this.renderPhotos()}
 					</ul>
 					<div className="gallery__controls">
 						<Button icon="chevron-left" action={this.handlePreviousClick} />
 						<Button icon="chevron-right" action={this.handleNextClick} />
 					</div>
-				</div>
-	    );
-	  }
-	}
-
-
-	class Gallery extends React.Component {
-		constructor(props) {
-			super(props);
-		}
-
-		render() {
-			return (
-				<ul className="gallery">{this.props.activePhoto}</ul>
-			);
-		}
-	}
-
-
-	class GalleryItem extends React.Component {
-	  constructor(props) {
-	    super(props);
-	  }
-
-	  render() {
-	    return (
-	      <div>
-					<li className="gallery__item">
-		        <div className="photo__panel">
-							<span className="gallery__image-holder"><img className="gallery__image" src={this.props.self.image_url} alt={this.props.self.name} title={this.props.self.name} /></span>
-						</div>
-						{/*
-							<div className="info__panel">
-								<div className="info__panel__inner">
-									<h2 className="photo__title">{this.props.self.name}</h2>
-									<p className="photo__description">{this.props.self.description}</p>
-								</div>
-							</div>
-						*/}
-		      </li>
-
 				</div>
 	    );
 	  }
