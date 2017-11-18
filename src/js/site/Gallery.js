@@ -18,9 +18,6 @@ export default function Gallery() {
 			super(props);
 			this.state = {
 				photos: [],
-				activePhoto: undefined,
-				previousPhoto: undefined,
-				nextPhoto: undefined,
 				loading: true,
 			}
 			this.handleNextClick = this.handleNextClick.bind(this);
@@ -37,7 +34,7 @@ export default function Gallery() {
 				}
 			})
 			.then(function (response) {
-				console.log(response);
+				//console.log(response);
 				for (let photo in response.data.photos) {
 					//console.log(response.data.photos[photo]);
 					let self = response.data.photos[photo],
@@ -45,8 +42,6 @@ export default function Gallery() {
 							newState = parent.state.photos.concat(self);
 					parent.setState({
 						photos: newState,
-						activePhoto: newState[0],
-						nextPhoto: newState[1],
 						loading: false
 					});
 				}
@@ -61,57 +56,53 @@ export default function Gallery() {
 		}
 
 		handleNextClick(direction) {
-			//console.log(direction);
-			var photos = this.state.photos,
-					last_photo = photos.length - 1,
-					current_photo = photos.findIndex(this.findPhoto),
-					next_photo = current_photo + 1,
-					next_photo_object;
-
+			var previousDOM = document.querySelector('.is-previous');
 			var currentDOM = document.querySelector('.is-current');
 			var nextDOM = document.querySelector('.is-next');
+			var futureDOMId = parseFloat(nextDOM.getAttribute('id')) + 1;
+			var futureDOM = document.getElementById(futureDOMId);
+
+			if (previousDOM !== null) {
+				previousDOM.classList.add('is-history');
+				previousDOM.classList.remove('is-previous');
+			}
+
 			currentDOM.classList.add('is-previous');
 			currentDOM.classList.remove('is-current');
 			nextDOM.classList.add('is-current');
 			nextDOM.classList.remove('is-next');
 
-			/*if (next_photo <= last_photo) {
-				next_photo_object = photos[next_photo];
+			if (futureDOM !== null) {
+				futureDOM.classList.add('is-next');
+				futureDOM.classList.remove('is-future');
 			} else {
-				next_photo_object = photos[0];
+				console.log('need to add first photo here');
 			}
-
-			this.updateActivePhoto(next_photo_object);*/
 		}
 
 		handlePreviousClick(direction) {
-			//console.log(direction);
-			var photos = this.state.photos,
-					last_photo = photos.length - 1,
-					current_photo = photos.findIndex(this.findPhoto),
-					previous_photo = current_photo - 1,
-					previous_photo_object;
-
-			var currentDOM = document.querySelector('.is-current');
 			var previousDOM = document.querySelector('.is-previous');
+			var currentDOM = document.querySelector('.is-current');
+			var nextDOM = document.querySelector('.is-next');
+			var historyDOMId = parseFloat(previousDOM.getAttribute('id')) - 1;
+			var historyDOM = document.getElementById(historyDOMId);
+
+			if (nextDOM !== null) {
+				nextDOM.classList.add('is-future');
+				nextDOM.classList.remove('is-next');
+			}
+
 			currentDOM.classList.add('is-next');
 			currentDOM.classList.remove('is-current');
 			previousDOM.classList.add('is-current');
 			previousDOM.classList.remove('is-previous');
 
-			/*if (previous_photo >= 0) {
-				previous_photo_object = photos[previous_photo];
+			if (historyDOM !== null) {
+				historyDOM.classList.add('is-previous');
+				historyDOM.classList.remove('is-history');
 			} else {
-				previous_photo_object = photos[last_photo];
+				console.log('Need to add last photo here');
 			}
-
-			this.updateActivePhoto(previous_photo_object);*/
-		}
-
-		updateActivePhoto(photo) {
-			this.setState({
-				activePhoto: photo
-			});
 		}
 
 	  componentWillMount() {
@@ -119,45 +110,26 @@ export default function Gallery() {
 	  }
 
 		renderPhotos() {
-			var collection = [];
-			for (let i in this.state.photos) {
-				let self = this.state.photos[i];
-				console.log(self);
-				collection.push(
-          <li key={i} className={"gallery__item" + (i == 0 ? " is-current" : "") + (i == this.state.photos.length - 1 ? " is-previous" : "") + (i == 1 ? " is-next" : "") + (i != 0 && i != 1 && i != this.state.photos.length - 1 ? " is-upcoming" : "")}>
-            {this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={self.image_url} alt={self.name} title={self.name} />}
-          </li>
-				);
+			const source = this.state.photos;
+			let collection = [];
+			for (let i in source) {
+				let self = source[i];
+				if (self !== undefined) {
+					//console.log(self);
+					collection.push(
+						<li key={i} id={i}
+							className={"gallery__item"
+							+ (i == 0 ? " is-current" : "")
+							+ (i == 1 ? " is-next" : "")
+							+ (i == 2 ? " is-future" : "")
+							+ (i > 2 ? " is-future" : "")}>
+							{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={self.image_url} alt={self.name} title={self.name} />}
+						</li>
+					);
+				}
 			}
 			return collection;
 		}
-
-		renderCurrentPhoto() {
-			console.log('here we go!');
-			return (
-				<li className="gallery__item is-current">
-					<img className="gallery__image" src={this.state.activePhoto.image_url} alt={this.state.activePhoto.name} title={this.state.activePhoto.name} />
-				</li>
-			);
-		}
-
-		renderPreviousPhoto() {
-			return (
-				<li className="gallery__item is-previous">
-					{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={this.state.previousPhoto.image_url} alt={this.state.previousPhoto.name} title={this.state.previousPhoto.name} />}
-				</li>
-			);
-		}
-
-		renderNextPhoto() {
-			return (
-				<li className="gallery__item is-next">
-					{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={this.state.nextPhoto.image_url} alt={this.state.nextPhoto.name} title={this.state.nextPhoto.name} />}
-				</li>
-			);
-		}
-
-
 
 	  render() {
 	    return (

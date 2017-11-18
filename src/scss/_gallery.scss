@@ -56,10 +56,10 @@
 			&.is-next {
 				transform: translate3d(100%, 0, 0);
 			}
-			&.is-gone {
+			&.is-history {
 				transform: translate3d(-200%, 0, 0);
 			}
-			&.is-upcoming {
+			&.is-future {
 				transform: translate3d(200%, 0, 0);
 			}
 		}
