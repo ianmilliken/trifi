@@ -23,6 +23,7 @@ export default function Gallery() {
 			this.handleNextClick = this.handleNextClick.bind(this);
 			this.handlePreviousClick = this.handlePreviousClick.bind(this);
 			this.findPhoto = this.findPhoto.bind(this);
+			this.handleKeyDown = this.handleKeyDown.bind(this);
 		}
 
 		fetchGallery() {
@@ -54,6 +55,8 @@ export default function Gallery() {
 		findPhoto(photo) {
 			return photo.id === this.state.activePhoto.id;
 		}
+
+
 
 		handleNextClick(direction) {
 			var previousDOM = document.querySelector('.is-previous');
@@ -105,9 +108,30 @@ export default function Gallery() {
 			}
 		}
 
+		handleKeyDown(event) {
+			event.preventDefault();
+			const LEFT_ARROW = 37,
+						RIGHT_ARROW = 39;
+			switch (event.keyCode) {
+				case LEFT_ARROW:
+					this.handlePreviousClick('previous');
+					break;
+				case RIGHT_ARROW:
+					this.handleNextClick('next');
+					break;
+				default:
+					break;
+			}
+		}
+
 	  componentWillMount() {
-	    this.fetchGallery();
-	  }
+			document.addEventListener('keydown', this.handleKeyDown);
+			this.fetchGallery();
+		}
+
+		componentWillUnmount() {
+			document.removeEventListener('keydown', this.handleKeyDown);
+		}
 
 		renderPhotos() {
 			const source = this.state.photos;
