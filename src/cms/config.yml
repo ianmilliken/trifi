@@ -29,25 +29,6 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "snapshots"
-    label: "Snapshots"
-    folder: "site/content/snapshots"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - name: author
-        label: Author
-        widget: relation
-        collection: authors
-        searchFields: [first_name, surname]
-        valueField: first_name
-      - { label: "Teaser", name: "teaser", widget: "text" }
-      - { label: City, name: city, widget: string }
-      - { label: Country, name: country, widget: string }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
   - name: 'galleries'
     label: 'Galleries'
     folder: 'site/content/galleries'
