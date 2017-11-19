@@ -64,6 +64,8 @@ collections: # A list of collections the CMS should be able to edit
       - { name: 'gallery_id', label: 'Gallery ID', widget: 'string' }
       - { name: 'image', label: 'Image', widget: 'image' }
       - { name: 'teaser', label: 'Teaser', widget: 'text' }
+      - { name: 'city', label: 'City',  widget: 'string' }
+      - { name: 'country', label: 'Country', widget: 'string' }
 
   - name: "pages"
     label: "Pages"
