@@ -148,6 +148,10 @@ export default function Gallery() {
 							+ (i == 2 ? " is-future" : "")
 							+ (i > 2 ? " is-future" : "")}>
 							{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={self.image_url} alt={self.name} title={self.name} />}
+							<div className="photo__info">
+								<h2 className="photo__title">{self.name}</h2>
+								<p className="photo__description">{self.description}</p>
+							</div>
 						</li>
 					);
 				}

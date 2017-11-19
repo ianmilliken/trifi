@@ -3,7 +3,6 @@
 	.gallery {
 		height: 100vh;
 		&-content {
-			height: calc(100vh - 7rem - 6.9rem);
 			background-color: #16161D;
 			&::before {
 				content: attr(data-title);
@@ -23,7 +22,7 @@
 		}
 		&__list {
 			position: relative;
-			height: 60vh;
+			height: 80vh;
 			margin-top: 4rem;
 			overflow: hidden;
 		}
@@ -72,11 +71,11 @@
 			overflow: hidden;
 		}
 		&__image {
-			height: 100%;
+			height: 80%;
 			width: 100%;
 			object-fit: contain;
 			object-position: center;
-			transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
+			transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
 		}
 		&__title {
 			color: $white;
@@ -140,29 +139,35 @@
 		}
 	}
 
+	.is-current {
+		& .photo__info {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
 	.photo {
-		&__panel {
-			display: flex;
-			justify-content: center;
-			width: 100%;
-			margin-top: 4rem;
+		&__info {
+			text-align: center;
+			opacity: 0;
+			transform: translate3d(0, 6rem, 0);
+			transition: all 0.5s cubic-bezier(0.39, 0.58, 0.57, 1);
 		}
 		&__title {
+			margin-top: 2rem;
+			margin-bottom: 0.8rem !important;
+			font-family: $body_font;
+			font-size: 2.1rem;
+			font-style: italic;
+			font-weight: 500;
 			margin-bottom: 1.6rem;
 			color: $white;
 		}
 		&__description {
+			font-family: $body_font;
+			font-size: 1.4rem;
 			color: $white;
 		}
-	}
-
-	.info__panel {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		width: 30%;
-		height: 70vh;
-		padding: 4rem;
 	}
 }
 
