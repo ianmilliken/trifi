@@ -106,6 +106,12 @@
 		&__date {
 			font-size: 1.3rem;
 			color: transparentize($white, 0.3);
+			& > a {
+				color: transparentize($white, 0.3);
+			}
+			& > a:hover {
+				color: $white;
+			}
 		}
 		&__controls {
 			position: absolute;
