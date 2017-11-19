@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: <% GITHUB_REPOSITORY %> # Gulp will replace this with your GitHub repository
-  branch: master # Branch to update (master by default)
+  branch: im-snapshots # Branch to update (master by default)
 
 # publish_mode: editorial_workflow
 
@@ -29,24 +29,24 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "snapshots"
-    label: "Snapshots"
-    folder: "site/content/snapshots"
+  - name: 'galleries'
+    label: 'Galleries'
+    folder: 'site/content/galleries'
     create: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { name: 'title', label: 'Title', widget: 'text' }
+      - { name: 'date', label: 'Published', widget: 'datetime' }
       - name: author
         label: Author
         widget: relation
         collection: authors
         searchFields: [first_name, surname]
         valueField: first_name
-      - { label: "Teaser", name: "teaser", widget: "text" }
-      - { label: City, name: city, widget: string }
-      - { label: Country, name: country, widget: string }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { name: 'gallery_id', label: 'Gallery ID', widget: 'string' }
+      - { name: 'image', label: 'Image', widget: 'image' }
+      - { name: 'teaser', label: 'Teaser', widget: 'text' }
+      - { name: 'city', label: 'City',  widget: 'string' }
+      - { name: 'country', label: 'Country', widget: 'string' }
 
   - name: "pages"
     label: "Pages"

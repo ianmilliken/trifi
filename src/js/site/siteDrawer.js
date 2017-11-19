@@ -21,12 +21,13 @@ export default function SiteDrawer() {
 
   hamburger.off();
   hamburger.on('click', function(event) {
-    console.log('BOOM!');
+		event.preventDefault();
     add_classes();
   });
 
   close.off();
   close.on('click', function(event) {
+		event.preventDefault();
     remove_classes();
   });
 

@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^6.6.0",
+    "axios": "^0.17.1",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
@@ -26,7 +27,8 @@
     "browser-sync": "^2.13.0",
     "css-loader": "^0.23.1",
     "cssnano": "^3.9.1",
-    "date-fns": "^1.27.2",
+    "date-fns": "^1.29.0",
+    "dotenv": "^4.0.0",
     "eslint": "^3.1.1",
     "eslint-plugin-import": "^1.11.1",
     "exports-loader": "^0.6.3",
@@ -44,17 +46,20 @@
     "postcss-import": "^8.1.2",
     "postcss-loader": "^0.9.1",
     "postcss-uncss": "^0.14.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
     "uncss": "^0.14.1",
+    "underscore": "^1.8.3",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
-    "gulp-inject": "^4.2.0",
+    "gulp-inject": "^4.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.1.0",
-    "susy": "^3.0.0",
+    "susy": "^3.0.1",
     "svg-sprite-loader": "^0.1.2"
   }
 }

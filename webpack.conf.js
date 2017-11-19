@@ -1,5 +1,8 @@
 import webpack from "webpack";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default {
   module: {
@@ -8,7 +11,10 @@ export default {
         test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
         loader: "file?name=/[hash].[ext]"
       },
-      {test: /\.json$/, loader: "json-loader"},
+      {
+        test: /\.json$/,
+        loader: "json-loader"
+      },
       {
         loader: "babel",
         test: /\.js?$/,
@@ -21,6 +27,10 @@ export default {
   plugins: [
     new webpack.ProvidePlugin({
       "fetch": "imports?this=>global!exports?global.fetch!whatwg-fetch"
+    }),
+    new webpack.DefinePlugin({
+      CONSUMER_KEY: JSON.stringify(process.env.CONSUMER_KEY),
+      USER_ID: JSON.stringify(process.env.USER_ID)
     })
   ],
 

@@ -6,7 +6,7 @@
     max-height: 60rem;
     position: relative;
     text-align: center;
-    padding-top: 7.2rem;
+    padding-top: 7rem;
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 75%);
 
     & img {
@@ -31,8 +31,8 @@
 
     &__location {
       color: $white;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 600;
       letter-spacing: 0.03rem;
       text-transform: uppercase;
       margin-bottom: 3rem;
@@ -42,21 +42,21 @@
     &__title {
       color: $white;
       font-size: 3.8rem;
-      font-weight: 800;
+      font-weight: 600;
       letter-spacing: -0.08rem;
       line-height: 1.18;
-      text-shadow: 0 0 10px rgba(0,0,0,0.75);
+      text-shadow: 0 0 4rem rgba(0,0,0,0.75);
     }
 
     &__teaser {
       color: $white;
-      font-size: 2.7rem;
-      font-weight: 300;
-      font-family: $serif_font;
+      font-size: 1.9rem;
+      font-weight: 400;
+      font-family: $body_font;
       font-style: italic;
       line-height: 1.3;
       margin-bottom: 3rem;
-      text-shadow: 0 0 10px rgba(0,0,0,0.75);
+      text-shadow: 0 0 4rem rgba(0,0,0,0.75);
     }
 
     &__button {
@@ -87,10 +87,9 @@
     height: 60vh;
     min-height: 40rem;
     max-height: 80rem;
-    padding-top: 11rem;
 
     &__title {
-      font-size: 5.8rem;
+      font-size: 5.2rem;
       margin-bottom: 2rem;
     }
 

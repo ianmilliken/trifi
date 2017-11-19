@@ -1,25 +1,29 @@
 baseurl: "/"
 languageCode: "en-us"
 title: "Two New Natives"
+relativeURLs: true
 
 menu:
   main:
     - Name: "Journal"
       URL: "/journal/"
       weight: 1
-    - Name: "Snapshots"
-      URL: "/snapshots/"
+      Identifier: "journal"
+    - Name: "Galleries"
+      URL: "/galleries/"
       weight: 2
+      Identifier: "galleries"
     - Name: "About Us"
       URL: "/about/"
       weight: 3
+      Identifier: "about"
 
   footer:
     - Name: "Journal"
       URL: "/journal/"
       weight: 1
-    - Name: "Snapshots"
-      URL: "/snapshots/"
+    - Name: "Galleries"
+      URL: "/galleries/"
       weight: 2
     - Name: "About Us"
       URL: "/about/"
@@ -33,9 +37,6 @@ params:
     - Name: "Facebook"
       ClassName: "fa-facebook"
       URL: "https://www.facebook.com/twonewnatives/"
-    - Name: "Twitter"
-      ClassName: "fa-twitter"
-      URL: "https://twitter.com/twonewnatives"
     - Name: "Instagram"
       ClassName: "fa-instagram"
       URL: "https://www.instagram.com/twonewnatives/"

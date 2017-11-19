@@ -11,13 +11,13 @@
 // 1. Typography
 // ---------
 //@import 'https://fonts.googleapis.com/css?family=Kalam:300|Merriweather:300,300i,700|Open+Sans:100,200,300,400,600,700';
-@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Merriweather:300,300i,400,400i,700,700i,900,900i|Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,600,700|Montserrat:300,300i,400,400i,500,500i,600,700');
 
 $html_font_size: 62.5%;
 $body_font_size: 1.6rem;
 $serif_font: 'Merriweather', serif;
-$sans_font: 'Lato', sans-serif;
-$cursive_font: 'Pacifico', cursive;
+$sans_font: 'Work Sans', sans-serif;
+$body_font: 'Montserrat', sans-serif;
 $header_lineheight: 1.4;
 $paragraph_lineheight: 1.6;
 
@@ -93,5 +93,5 @@ body {
 }
 
 p {
-  font-family: $serif_font;
+  font-family: $body_font;
 }

@@ -1,7 +1,7 @@
 <nav class="site-nav">
 	<div class="container">
-		<div class="flexbox flexbox">
-			<a class="site-nav__logo site-nav__logo" href="/">
+		<div class="flexbox">
+			<a class="site-nav__logo" href="/">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 812.25 535.56">
 					<g>
 						<path d="M189 95.28c-12.86 19-26.42 109.46-6.16 116.84 7.82 2.85 20.21-14.93 40.64-32.89-.92 43.35 30 73.21 44.38 69.92 32.39-7.4 12.88-146.22 12.88-146.22s-12.74-4.26-12.64-1.59c2.09 54.91.61 118.46-8.46 118-6.67-.31-8.14-43.7-11.31-52.23-5-13.54-19.27-16-21.4-14.19-9.32 8.13-26.81 30.73-29.6 28.14-1.89-1.75 6.75-50.35 14.53-68.73 2.25-5.27-20.92-19.96-22.86-17.05zm177.3 31.18c7.61-3.71-15.93-20.2-31.16-12.48-38.83 19.7-45 87.44-9.93 106 5.84 3.08 13.2 3 19.72 2 33.27-5 47.29-61.27 33.67-83.94-1.66-2.76-14.08-4.64-12.77-1.7 13.62 30.37-9.74 60.47-17.13 67.83-6.16 6.13-12.56 3.69-15.85 1.46-17.43-11.83 7.7-66.63 33.45-79.17z"></path>
@@ -15,7 +15,16 @@
 				{{ $currentNode := . }}
         {{ range .Site.Menus.main }}
 				<li class="site-nav__list-item">
-					<a class="site-nav__link {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}site-nav__link--active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
+					<a class="site-nav__link {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) (eq $currentNode.Section .Identifier) }}site-nav__link--active{{end}}" href="{{ .URL }}">{{ .Name }}</a>
+				</li>
+				{{ end }}
+			</ul>
+			{{ end }}
+			{{ if .Site.Params.social }}
+			<ul class="social__list">
+				{{ range .Site.Params.social }}
+				<li class="social__list-item">
+					<a class="social__link" href="{{ .URL }}" target="_blank"><i class="fa {{ .ClassName }}"></i></a>
 				</li>
 				{{ end }}
 			</ul>
