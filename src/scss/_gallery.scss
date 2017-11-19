@@ -82,6 +82,7 @@
 			font-size: 4.6rem;
 			font-weight: 700;
 			margin-top: 2rem !important;
+			margin-bottom: 1rem;
 			& > span {
 				position: relative;
 				padding-left: 2.6rem;
@@ -94,13 +95,17 @@
 				left: 0;
 				right: 0;
 				top: 0;
-				bottom: 0;
+				bottom: 2rem;
 				width: 100vw;
 				height: 0.1rem;
 				margin-top: auto;
 				margin-bottom: auto;
 				background-color: #2E3148;
 			}
+		}
+		&__date {
+			font-size: 1.3rem;
+			color: transparentize($white, 0.3);
 		}
 		&__controls {
 			position: absolute;
