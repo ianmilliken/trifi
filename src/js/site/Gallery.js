@@ -9,9 +9,7 @@ export default function Gallery() {
 
 
 	const GalleryDOM = document.getElementById('gallery'),
-				GalleryID = GalleryDOM.dataset.galleryId,
-				UserID = USER_ID,
-				ConsumerKey = CONSUMER_KEY;
+				GalleryID = GalleryDOM.dataset.galleryId;
 
 	class GalleryContainer extends React.Component {
 		constructor(props) {
@@ -28,19 +26,18 @@ export default function Gallery() {
 
 		fetchGallery() {
 			const parent = this;
-			axios.get('https://api.500px.com/v1/users/' + UserID + '/galleries/' + GalleryID + '/items', {
+			axios.get('https://api.500px.com/v1/users/' + USER_ID + '/galleries/' + GalleryID + '/items', {
 				params: {
 					image_size: 1600,
 					rpp: 50,
-					consumer_key: ConsumerKey
+					consumer_key: CONSUMER_KEY
 				}
 			})
 			.then(function (response) {
-				console.log(response);
+				//console.log(response);
 				for (let photo in response.data.photos) {
 					//console.log(response.data.photos[photo]);
 					let self = response.data.photos[photo],
-							//instance = <GalleryItem id={self.id} self={self} handlePreviousClick={parent.handlePreviousClick} handleNextClick={parent.handleNextClick} photos={parent.state.photos} />,
 							newState = parent.state.photos.concat(self);
 					parent.setState({
 						photos: newState,
@@ -56,8 +53,6 @@ export default function Gallery() {
 		findPhoto(photo) {
 			return photo.id === this.state.activePhoto.id;
 		}
-
-
 
 		handleNextClick(direction) {
 			var nextDOM = document.querySelector('.is-next');
@@ -83,7 +78,7 @@ export default function Gallery() {
 					futureDOM.classList.remove('is-future');
 				}
 			} else {
-				console.log('There is no next photo.');
+				//console.log('There is no next photo.');
 			}
 		}
 
@@ -112,7 +107,7 @@ export default function Gallery() {
 				}
 
 			} else {
-				console.log('There is no previous photo.');
+				//console.log('There is no previous photo.');
 			}
 		}
 
@@ -147,7 +142,6 @@ export default function Gallery() {
 			for (let i in source) {
 				let self = source[i];
 				if (self !== undefined) {
-					//console.log(self);
 					collection.push(
 						<li key={i} id={i}
 							className={"gallery__item"
