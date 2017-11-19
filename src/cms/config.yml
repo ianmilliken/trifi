@@ -61,7 +61,9 @@ collections: # A list of collections the CMS should be able to edit
         collection: authors
         searchFields: [first_name, surname]
         valueField: first_name
-      - { name: 'gallery_id', label: 'Gallery ID', widget: 'text' }
+      - { name: 'gallery_id', label: 'Gallery ID', widget: 'string' }
+      - { name: 'image', label: 'Image', widget: 'image' }
+      - { name: 'teaser', label: 'Teaser', widget: 'text' }
 
   - name: "pages"
     label: "Pages"

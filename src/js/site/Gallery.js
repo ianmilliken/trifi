@@ -31,11 +31,12 @@ export default function Gallery() {
 			axios.get('https://api.500px.com/v1/users/' + UserID + '/galleries/' + GalleryID + '/items', {
 				params: {
 					image_size: 1600,
+					rpp: 50,
 					consumer_key: ConsumerKey
 				}
 			})
 			.then(function (response) {
-				//console.log(response);
+				console.log(response);
 				for (let photo in response.data.photos) {
 					//console.log(response.data.photos[photo]);
 					let self = response.data.photos[photo],
