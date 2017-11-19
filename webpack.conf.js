@@ -1,5 +1,8 @@
 import webpack from "webpack";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default {
   module: {
@@ -24,6 +27,10 @@ export default {
   plugins: [
     new webpack.ProvidePlugin({
       "fetch": "imports?this=>global!exports?global.fetch!whatwg-fetch"
+    }),
+    new webpack.DefinePlugin({
+      CONSUMER_KEY: JSON.stringify(process.env.CONSUMER_KEY),
+      USER_ID: JSON.stringify(process.env.USER_ID)
     })
   ],
 

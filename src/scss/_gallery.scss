@@ -38,6 +38,7 @@
 			margin: auto;
 			transform: translate3d(0, 0, 0);
 			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			will-change: transform;
 			&.is-previous,
 			&.is-next {
 				z-index: 0;
@@ -120,7 +121,7 @@
 			position: absolute;
 			top: 0;
 			width: 100%;
-			transform: translate3d(0, 50vh, 0);
+			transform: translate3d(0, 57vh, 0);
 		}
 		&__button {
 			position: absolute;

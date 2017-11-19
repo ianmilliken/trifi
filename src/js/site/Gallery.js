@@ -10,8 +10,8 @@ export default function Gallery() {
 
 	const GalleryDOM = document.getElementById('gallery'),
 				GalleryID = GalleryDOM.dataset.galleryId,
-				UserID = '19709765',
-				ConsumerKey = 'QbKVMdZ4ltpPI7jfFXbaQ4uuMUglNmZGBjPwPCYk';
+				UserID = USER_ID,
+				ConsumerKey = CONSUMER_KEY;
 
 	class GalleryContainer extends React.Component {
 		constructor(props) {
