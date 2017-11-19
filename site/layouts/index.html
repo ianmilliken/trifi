@@ -2,11 +2,9 @@
 
 {{ $baseURL := .Site.BaseURL }}
 
-<div id="fivehundred"></div>
-
 {{ range first 1 (where .Data.Pages.ByDate.Reverse "Section" "journal") }}
 <div class="p-banner">
-  <div class="container u-center-group">
+  <div class="container container--full u-center-group">
     <div class="p-banner__background" style="background-image: url({{ .Params.image }})"></div>
     <div class="u-group">
       <div class="p-banner__location">
@@ -55,8 +53,8 @@
     </section>
 
     <section class="container__half">
-      <h2 class="listings-header__title">Latest Snapshots</h2>
-      {{ range where .Data.Pages "Section" "snapshots" }}
+      <h2 class="listings-header__title">Latest Galleries</h2>
+      {{ range where .Data.Pages "Section" "galleries" }}
       <section class="listings-body">
         <ul class="article-list">
           <li class="article-item--small">

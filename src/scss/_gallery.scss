@@ -77,6 +77,9 @@
 			object-position: center;
 			transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
 		}
+		&__header {
+			position: relative;
+		}
 		&__title {
 			color: $white;
 			font-size: 4.6rem;

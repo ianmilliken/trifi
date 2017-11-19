@@ -6,13 +6,11 @@
     width: 100%;
     z-index: 5;
 
-    /*& .flexbox {
-      border-bottom: 0.1rem solid $grey;
+    &--white {
+      .social__link {
+  			color: $white;
+  		}
     }
-
-    & .flexbox--light {
-      border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
-    }*/
 
     &__logo {
       display: block;
@@ -62,11 +60,11 @@
 					z-index: -1;
 					width: 110%;
 					height: 0.7rem;
-					background-color: #315C8E;
+					background-color: $primary_color;
 				}
 
         &:hover::before {
-          background-color: #5081BA;
+          background-color: $primary_color_hover;
         }
 			}
 
@@ -130,6 +128,10 @@
           &::before, &::after {
             background-color: $white;
           }
+
+          .social__link {
+      			color: $white;
+      		}
         }
       }
     }
