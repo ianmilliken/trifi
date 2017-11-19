@@ -59,52 +59,59 @@ export default function Gallery() {
 
 
 		handleNextClick(direction) {
-			var previousDOM = document.querySelector('.is-previous');
-			var currentDOM = document.querySelector('.is-current');
 			var nextDOM = document.querySelector('.is-next');
-			var futureDOMId = parseFloat(nextDOM.getAttribute('id')) + 1;
-			var futureDOM = document.getElementById(futureDOMId);
 
-			if (previousDOM !== null) {
-				previousDOM.classList.add('is-history');
-				previousDOM.classList.remove('is-previous');
-			}
+			if (nextDOM !== null) {
+				var previousDOM = document.querySelector('.is-previous');
+				var currentDOM = document.querySelector('.is-current');
+				var futureDOMId = parseFloat(nextDOM.getAttribute('id')) + 1;
+				var futureDOM = document.getElementById(futureDOMId);
 
-			currentDOM.classList.add('is-previous');
-			currentDOM.classList.remove('is-current');
-			nextDOM.classList.add('is-current');
-			nextDOM.classList.remove('is-next');
+				currentDOM.classList.add('is-previous');
+				currentDOM.classList.remove('is-current');
+				nextDOM.classList.add('is-current');
+				nextDOM.classList.remove('is-next');
 
-			if (futureDOM !== null) {
-				futureDOM.classList.add('is-next');
-				futureDOM.classList.remove('is-future');
+				if (previousDOM !== null) {
+					previousDOM.classList.add('is-history');
+					previousDOM.classList.remove('is-previous');
+				}
+
+				if (futureDOM !== null) {
+					futureDOM.classList.add('is-next');
+					futureDOM.classList.remove('is-future');
+				}
 			} else {
-				console.log('need to add first photo here');
+				console.log('There is no next photo.');
 			}
 		}
 
 		handlePreviousClick(direction) {
 			var previousDOM = document.querySelector('.is-previous');
-			var currentDOM = document.querySelector('.is-current');
-			var nextDOM = document.querySelector('.is-next');
-			var historyDOMId = parseFloat(previousDOM.getAttribute('id')) - 1;
-			var historyDOM = document.getElementById(historyDOMId);
 
-			if (nextDOM !== null) {
-				nextDOM.classList.add('is-future');
-				nextDOM.classList.remove('is-next');
-			}
+			if (previousDOM !== null) {
+				var currentDOM = document.querySelector('.is-current');
+				var nextDOM = document.querySelector('.is-next');
+				var historyDOMId = parseFloat(previousDOM.getAttribute('id')) - 1;
+				var historyDOM = document.getElementById(historyDOMId);
 
-			currentDOM.classList.add('is-next');
-			currentDOM.classList.remove('is-current');
-			previousDOM.classList.add('is-current');
-			previousDOM.classList.remove('is-previous');
+				currentDOM.classList.add('is-next');
+				currentDOM.classList.remove('is-current');
+				previousDOM.classList.add('is-current');
+				previousDOM.classList.remove('is-previous');
 
-			if (historyDOM !== null) {
-				historyDOM.classList.add('is-previous');
-				historyDOM.classList.remove('is-history');
+				if (historyDOM !== null) {
+					historyDOM.classList.add('is-previous');
+					historyDOM.classList.remove('is-history');
+				}
+
+				if (nextDOM !== null) {
+					nextDOM.classList.add('is-future');
+					nextDOM.classList.remove('is-next');
+				}
+
 			} else {
-				console.log('Need to add last photo here');
+				console.log('There is no previous photo.');
 			}
 		}
 
