@@ -7,9 +7,8 @@ export default function Gallery() {
 	console.log('Gallery has loaded');
 	console.log('----------------------------------------');
 
-
-	const GalleryDOM = document.getElementById('gallery'),
-				GalleryID = GalleryDOM.dataset.galleryId;
+	const GalleryDOM = document.getElementById('gallery');
+	const GalleryID = GalleryDOM.dataset.galleryId;
 
 	class GalleryContainer extends React.Component {
 		constructor(props) {
@@ -26,27 +25,24 @@ export default function Gallery() {
 
 		fetchGallery() {
 			const parent = this;
-			axios.get('https://api.500px.com/v1/users/' + USER_ID + '/galleries/' + GalleryID + '/items', {
+			axios.get(`https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${FLICKR_API_KEY}&format=json&nojsoncallback=1`, {
 				params: {
-					image_size: 1600,
-					rpp: 50,
-					consumer_key: CONSUMER_KEY
+					photoset_id: GalleryID
 				}
 			})
 			.then(function (response) {
-				//console.log(response);
-				for (let photo in response.data.photos) {
-					//console.log(response.data.photos[photo]);
-					let self = response.data.photos[photo],
-							newState = parent.state.photos.concat(self);
+				const data = response.data.photoset.photo
+				for (let photo in data) {
+					let self = data[photo],
+						newState = parent.state.photos.concat(self);
 					parent.setState({
 						photos: newState,
+						userID: self.owner,
 						loading: false
 					});
 				}
-			})
-			.catch(function (error) {
-				console.log(error);
+			}).catch(function (err) {
+				console.error('Error: ', err);
 			});
 		}
 
@@ -141,6 +137,9 @@ export default function Gallery() {
 			let collection = [];
 			for (let i in source) {
 				let self = source[i];
+				// Formatting rules for source URLS can be found at:
+				// https://www.flickr.com/services/api/misc.urls.html
+				let url = `https://farm${self.farm}.staticflickr.com/${self.server}/${self.id}_${self.secret}.jpg`
 				if (self !== undefined) {
 					collection.push(
 						<li key={i} id={i}
@@ -149,9 +148,12 @@ export default function Gallery() {
 							+ (i == 1 ? " is-next" : "")
 							+ (i == 2 ? " is-future" : "")
 							+ (i > 2 ? " is-future" : "")}>
-							{this.state.loading ? <span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> : <img className="gallery__image" src={self.image_url} alt={self.name} title={self.name} />}
+							{this.state.loading ? 
+								<span className="gallery__loader"><i className="fa fa-circle-o-notch fa-spin"></i></span> 
+								: <img className="gallery__image" src={url} alt={self.title} title={self.title} /> }
+
 							<div className="photo__info">
-								<h2 className="photo__title">{self.name}</h2>
+								<h2 className="photo__title">{self.title}</h2>
 								<p className="photo__description">{self.description}</p>
 							</div>
 						</li>

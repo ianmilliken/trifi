@@ -30,9 +30,15 @@ export default {
     }),
     new webpack.DefinePlugin({
       CONSUMER_KEY: JSON.stringify(process.env.CONSUMER_KEY),
-      USER_ID: JSON.stringify(process.env.USER_ID)
+      USER_ID: JSON.stringify(process.env.USER_ID),
+      FLICKR_API_KEY: JSON.stringify(process.env.FLICKR_API_KEY),
+      FLICKR_CONSUMER_SECRET: JSON.stringify(process.env.FLICKR_CONSUMER_SECRET),
     })
   ],
+
+  node: {
+    fs: "empty"
+  },
 
   context: path.join(__dirname, "src"),
   entry: {
