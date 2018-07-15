@@ -139,7 +139,7 @@ export default function Gallery() {
 				let self = source[i];
 				// Formatting rules for source URLS can be found at:
 				// https://www.flickr.com/services/api/misc.urls.html
-				let url = `https://farm${self.farm}.staticflickr.com/${self.server}/${self.id}_${self.secret}.jpg`
+				let url = `https://farm${self.farm}.staticflickr.com/${self.server}/${self.id}_${self.secret}_b.jpg`
 				if (self !== undefined) {
 					collection.push(
 						<li key={i} id={i}
