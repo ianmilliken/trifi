@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: <% GITHUB_REPOSITORY %> # Gulp will replace this with your GitHub repository
-  branch: im-snapshots # Branch to update (master by default)
+  branch: master # Branch to update (master by default)
 
 # publish_mode: editorial_workflow
 

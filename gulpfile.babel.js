@@ -1,10 +1,13 @@
 import gulp from "gulp";
+import {spawn} from "child_process";
 import cp from "child_process";
+import hugoBin from "hugo-bin";
 import gutil from "gulp-util";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
 import cssnext from "postcss-cssnext";
 import BrowserSync from "browser-sync";
+import watch from "gulp-watch";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
 import svgstore from "gulp-svgstore";
@@ -15,13 +18,26 @@ import cssnano from "cssnano";
 import sass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
 
+
 const browserSync = BrowserSync.create();
-const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
-const defaultArgs = ["-d", "../dist", "-s", "site"];
 
+
+// Hugo arguments
+const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v"];
+const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
+
+
+// Development tasks
 gulp.task("hugo", (cb) => buildSite(cb));
-gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
+gulp.task("hugo-preview", (cb) => buildSite(cb, hugoArgsPreview));
 
+
+// Build/production tasks
+gulp.task("build", ["sass", "fonts", "js", "cms"], (cb) => buildSite(cb, [], "production"));
+gulp.task("build-preview", ["sass", "fonts", "js"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
+
+
+// Compile CMS
 gulp.task("cms", () => {
   const match = process.env.REPOSITORY_URL ? process.env.REPOSITORY_URL : cp.execSync("git remote -v", {encoding: "utf-8"});
   let repo = null;
@@ -37,21 +53,8 @@ gulp.task("cms", () => {
     .pipe(browserSync.stream())
 });
 
-gulp.task("build", ["sass", "fonts", "js", "hugo", "cms"]);
-gulp.task("build-preview", ["sass", "fonts", "js", "hugo-preview"]);
 
-gulp.task("css", () => (
-  gulp.src("./src/css/*.css")
-    .pipe(postcss([
-      cssImport({from: "./src/css/main.css"}),
-      cssnext(),
-      cssnano(),
-    ]))
-    .pipe(gulp.dest("./dist/css"))
-    .pipe(browserSync.stream())
-));
-
-// SCSS
+// Complile SCSS
 gulp.task("sass", () => (
   gulp.src("./src/scss/*.scss")
   .pipe(sass({
@@ -65,13 +68,8 @@ gulp.task("sass", () => (
   .pipe(browserSync.stream())
 ));
 
-// FONTS
-gulp.task("fonts", () => (
-  gulp.src("./node_modules/font-awesome/fonts/**.*")
-    .pipe(gulp.dest('./dist/fonts'))
-    .pipe(browserSync.stream())
-));
 
+// Compile Javascript
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
 
@@ -86,6 +84,16 @@ gulp.task("js", (cb) => {
   });
 });
 
+
+// Complile Fonts
+gulp.task("fonts", () => (
+  gulp.src("./node_modules/font-awesome/fonts/**.*")
+    .pipe(gulp.dest('./dist/fonts'))
+    .pipe(browserSync.stream())
+));
+
+
+// Complile SVGs
 gulp.task("svg", () => {
   const svgs = gulp
     .src("site/static/img/icons/*.svg")
@@ -102,25 +110,33 @@ gulp.task("svg", () => {
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
-gulp.task("server", ["hugo", "sass", "fonts", "js", "svg", "cms"], () => {
+
+// Development server with browsersync
+gulp.task("server", ["hugo", "sass", "js", "fonts", "svg", "cms"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   });
-  gulp.watch("./src/js/**/*.js", ["js"]);
-  gulp.watch("./src/scss/**/*.scss", ["sass"]);
-  gulp.watch("./src/cms/*", ["cms"]);
-  gulp.watch("./site/static/img/icons/*.svg", ["svg"]);
-  gulp.watch("./site/**/*", ["hugo"]);
+  watch("./src/js/**/*.js", () => { gulp.start(["js"]) });
+  watch("./src/cms/*", () => { gulp.start(["cms"]) });
+  watch("./src/scss/**/*.scss", () => { gulp.start(["sass"]) });
+  watch("./site/**/*", () => { gulp.start(["hugo"]) });
+  watch("./site/static/img/icons/*.svg", ["svg"]); 
 });
 
-function buildSite(cb, options) {
-  const args = options ? defaultArgs.concat(options) : defaultArgs;
 
-  return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
+/**
+ * Run hugo and build the site
+ */
+function buildSite(cb, options, environment = "development") {
+  const args = options ? hugoArgsDefault.concat(options) : hugoArgsDefault;
+
+  process.env.NODE_ENV = environment;
+
+  return spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
     if (code === 0) {
-      browserSync.reload("notify:false");
+      browserSync.reload();
       cb();
     } else {
       browserSync.notify("Hugo build failed :(");

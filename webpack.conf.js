@@ -9,24 +9,29 @@ export default {
     loaders: [
       {
         test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file?name=/[hash].[ext]"
+        loader: "file-loader?name=/[hash].[ext]"
       },
       {
         test: /\.json$/,
         loader: "json-loader"
       },
       {
-        loader: "babel",
+        loader: "babel-loader",
         test: /\.js?$/,
         exclude: /node_modules/,
-        query: {cacheDirectory: true}
+        query: {
+          presets: ['react'],
+          cacheDirectory: true
+        }
       }
     ]
   },
 
   plugins: [
     new webpack.ProvidePlugin({
-      "fetch": "imports?this=>global!exports?global.fetch!whatwg-fetch"
+     // "fetch": "imports?this=>global!exports?global.fetch!whatwg-fetch"
+     // no longer allowed to omit the '-loader' suffix when using loaders
+      "fetch": "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
     }),
     new webpack.DefinePlugin({
       CONSUMER_KEY: JSON.stringify(process.env.CONSUMER_KEY),
@@ -35,10 +40,6 @@ export default {
       FLICKR_CONSUMER_SECRET: JSON.stringify(process.env.FLICKR_CONSUMER_SECRET),
     })
   ],
-
-  node: {
-    fs: "empty"
-  },
 
   context: path.join(__dirname, "src"),
   entry: {
