@@ -10,7 +10,7 @@
   <header class="gallery__header container container--full">
     <div class="content-narrow u-center">
       <h1 id="page-title" class="gallery__title"><span>{{ .Title }}</span></h1>
-			<span class="gallery__date">Published {{ .Date.Format "Monday, 02 January 2006" }} &nbsp; | &nbsp; <a href="https://500px.com/twonewnatives/galleries/{{ .Params.gallery_id }}" target="_blank">View on 500px <i class="fa fa-external-link"></i></a></span>
+			<span class="gallery__date">Published {{ .Date.Format "Monday, 02 January 2006" }} &nbsp; | &nbsp; <a href="https://www.flickr.com/photos/{{ .Site.Data.settings.flickr_id }}/sets/{{ .Params.gallery_id }}/" target="_blank">View on Flickr <i class="fa fa-external-link"></i></a></span>
     </div>
   </header>
   <section class="container">
