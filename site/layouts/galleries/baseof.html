@@ -24,9 +24,13 @@
   <body>
 
     <div class="body">
-      {{ partial "nav_dark" . }}
+      {{ block "navigation" . }}
+        {{ partial "nav" . }}
+      {{ end }}
       {{ block "main" . }}{{ end }}
-      {{ partial "footer_dark" . }}
+      {{ block "footer" . }}
+        {{ partial "footer" . }}
+      {{ end }}
       <div class="site-overlay"></div>
       {{ partial "site-drawer" . }}
     </div>

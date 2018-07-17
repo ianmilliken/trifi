@@ -1,7 +1,3 @@
-{{ define "navigation" }}
-  {{ partial "nav" . }}
-{{ end }}
-
 {{ define "main" }}
 
 {{ $baseURL := .Site.BaseURL }}
@@ -22,7 +18,7 @@
         <img class="article-item__thumbnail" src="{{ .Params.image }}" alt="{{ .Title }}"/>
         <div class="article-item__body">
           <div class="article-item__title">{{ .Title }}</div>
-
+          <div class="article-item__summary">{{ .Params.teaser }}</div>
           <div class="article-item__meta">
 
             {{ if .Params.author }}
@@ -35,6 +31,15 @@
               <div class="article-item__author__name"><span>{{ .Params.author }}</span></div>
             </div>
             {{ end }}
+
+            <div>
+              <div class="article-item__date">
+                <i class="fa fa-clock-o"></i> {{ .Date.Format "Mon, 02 Jan 2006" }}
+              </div>
+              <div class="article-item__location">
+                <i class="fa fa-map-marker"></i> {{ .Params.city }}, {{ .Params.Country }}
+              </div>
+            </div>
           </div>
         </div>
       </a>

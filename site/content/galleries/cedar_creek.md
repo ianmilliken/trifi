@@ -1,14 +1,11 @@
 ---
 title: Cedar Creek
-date: 2016-09-16T15:04:10.000Z
+date: 2017-11-16T15:04:10.000Z
 author: Ian
 gallery_id: 72157699050143825
-image: /img/shanghai-0721.jpg
+image: /img/ceder-creek-0194.jpg
 teaser: >-
-  Our first destination was the big and bustling city of Shanghai, characterized
-  by its electric skyline and stylish streets. However we did find pockets of
-  more traditional Chinese culture tucked away in the metropolis - there's more
-  to Shanghai than meets the eye!
+  We've passed hundreds of creaks, some of them are even numbered, but Cedar Creek stands thanks to it's towering boulder formations and waterfalls emersed in a lush emerald forest.
 city: Cedar Creek
 country: Australia
 ---

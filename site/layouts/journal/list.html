@@ -9,6 +9,46 @@
       We’ve tried to keep track of the interesting things that go on day by day as best we can, and this is where we scribble it all down.
     </p>
   </header>
+
+    <section class="listings-body">
+	  {{ if .Data.Pages }}
+	  <ul class="article-list">
+	    {{ range .Data.Pages.ByDate.Reverse }}
+	    <li class="article-item">
+	      <a class="article-item__link" href="{{ .Permalink }}">
+	        <img class="article-item__thumbnail" src="{{ .Params.image }}" alt="{{ .Title }}"/>
+	        <div class="article-item__body">
+	          <div class="article-item__title">{{ .Title }}</div>
+	          <div class="article-item__summary">{{ .Params.teaser }}</div>
+	          <div class="article-item__meta">
+
+	            {{ if .Params.author }}
+	            <div class="article-item__author">
+	              {{ if eq .Params.author "Ian" }}
+	              <img class="article-item__author__image" src="/img/ian.jpg" alt="{{ .Params.author }}"/>
+	              {{ else }}
+	              <img class="article-item__author__image" src="/img/clare.jpg" alt="{{ .Params.author }}"/>
+	              {{ end }}
+	              <div class="article-item__author__name"><span>{{ .Params.author }}</span></div>
+	            </div>
+	            {{ end }}
+
+	            <div>
+	              <div class="article-item__date">
+	                <i class="fa fa-clock-o"></i> {{ .Date.Format "Mon, 02 Jan 2006" }}
+	              </div>
+	              <div class="article-item__location">
+	                <i class="fa fa-map-marker"></i> {{ .Params.city }}, {{ .Params.Country }}
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </a>
+	    </li>
+	    {{ end }}
+	  </ul>
+	  {{ end }}
+	</section>
 </div>
 
 {{ end }}
